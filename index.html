@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Supervisi Perencanaan Pembelajaran — UPTD SPF SD Negeri Lanas 1</title>
+<meta name="theme-color" content="#12132B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#E9EDF1; --paper:#FFFFFF; --paper2:#F6F8FA;
+  --ink:#15181C; --muted:#5B6673; --line:#D9E0E7;
+  --merah:#1B4D7E; --merah-bg:#E9F0F7;
+  --hijau:#1E6B4E; --hijau-bg:#E9F4EF;
+  --biru:#9E2A2B; --biru-bg:#FAEDED;
+  --amber:#8A5A0B; --amber-bg:#FBF1DF;
+  --shadow:0 1px 0 rgba(21,24,28,.06), 0 6px 18px -12px rgba(21,24,28,.35);
+  --r:14px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#101317; --paper:#181C21; --paper2:#1E232A;
+    --ink:#EDF1F5; --muted:#9AA6B3; --line:#2B323A;
+    --merah:#8FBBE6; --merah-bg:#14202C;
+    --hijau:#79C9A6; --hijau-bg:#152520;
+    --biru:#E2807F; --biru-bg:#2B1C1D;
+    --amber:#DDB05F; --amber-bg:#261F12;
+    --shadow:0 1px 0 rgba(0,0,0,.4), 0 6px 18px -12px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#101317; --paper:#181C21; --paper2:#1E232A;
+  --ink:#EDF1F5; --muted:#9AA6B3; --line:#2B323A;
+  --merah:#8FBBE6; --merah-bg:#14202C;
+  --hijau:#79C9A6; --hijau-bg:#152520;
+  --biru:#E2807F; --biru-bg:#2B1C1D;
+  --amber:#DDB05F; --amber-bg:#261F12;
+  --shadow:0 1px 0 rgba(0,0,0,.4), 0 6px 18px -12px rgba(0,0,0,.8);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Plus Jakarta Sans","Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+  font-size:16px; line-height:1.55; -webkit-text-size-adjust:100%;
+}
+#app{max-width:680px;margin:0 auto;padding:0 14px 108px}
+h1,h2,h3{margin:0;line-height:1.25;font-weight:800;letter-spacing:-.015em}
+p{margin:0 0 10px}
+a{color:var(--merah)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--merah);outline-offset:2px;border-radius:6px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+.top{position:sticky;top:0;z-index:30;background:var(--bg);padding:12px 0 8px;margin:0 -14px;padding-left:14px;padding-right:14px;border-bottom:1px solid var(--line)}
+.top-row{display:flex;align-items:center;gap:10px}
+.crest{width:38px;height:38px;flex:none;border-radius:10px;background:var(--merah);color:#fff;display:grid;place-items:center;font-weight:800;font-size:13px;letter-spacing:.02em}
+:root[data-theme="dark"] .crest,
+:root:not([data-theme="light"]) .crest{color:#0d1b28}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]) .crest{color:#fff}}
+.top h1{font-size:15px}
+.top .sub{font-size:12px;color:var(--muted);font-weight:500}
+.iconbtn{margin-left:auto;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:8px 10px;cursor:pointer;font-size:14px}
+
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:16px;margin:12px 0}
+.card.tight{padding:12px}
+.sec-title{font-size:12px;font-weight:800;color:var(--muted);margin:22px 2px 6px}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+.xsmall{font-size:12px}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.spread{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+hr{border:0;border-top:1px solid var(--line);margin:14px 0}
+
+.hero{display:flex;gap:16px;align-items:center}
+.ring{flex:none}
+.hero-num{font-size:30px;font-weight:800;letter-spacing:-.03em;line-height:1.05}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.stat{background:var(--paper2);border:1px solid var(--line);border-radius:12px;padding:11px 12px}
+.stat b{display:block;font-size:22px;letter-spacing:-.02em}
+.stat span{font-size:12px;color:var(--muted)}
+
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.tile{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);
+  padding:16px 14px;text-align:left;cursor:pointer;min-height:86px;display:flex;flex-direction:column;justify-content:flex-end;gap:2px}
+.tile .em{font-size:20px;line-height:1}
+.tile b{font-size:15px}
+.tile span{font-size:12px;color:var(--muted)}
+.tile:active{background:var(--paper2)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  border:1px solid var(--line);background:var(--paper);border-radius:12px;
+  padding:13px 16px;font-weight:600;cursor:pointer;min-height:48px}
+.btn:active{transform:translateY(1px)}
+.btn.primary{background:var(--merah);border-color:var(--merah);color:#fff}
+:root[data-theme="dark"] .btn.primary,
+:root:not([data-theme="light"]) .btn.primary{color:#0d1b28}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]) .btn.primary{color:#fff}}
+.btn.block{width:100%}
+.btn.sm{min-height:38px;padding:8px 12px;font-size:14px;border-radius:10px}
+.btn.danger{color:var(--biru);border-color:var(--biru)}
+.btnrow{display:flex;gap:10px}
+.btnrow .btn{flex:1}
+
+label.f{display:block;margin:12px 0 0}
+label.f>span{display:block;font-size:13px;font-weight:600;margin-bottom:5px}
+input,select,textarea{width:100%;font:inherit;color:var(--ink);background:var(--paper2);
+  border:1px solid var(--line);border-radius:11px;padding:12px;min-height:48px}
+textarea{min-height:86px;resize:vertical;line-height:1.5}
+select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);
+  background-position:calc(100% - 18px) 21px,calc(100% - 13px) 21px;background-size:5px 5px,5px 5px;background-repeat:no-repeat;padding-right:38px}
+
+.ind{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:14px;margin:10px 0;box-shadow:var(--shadow)}
+.ind .no{font-size:12px;font-weight:800;color:var(--merah)}
+.ind .q{font-weight:600;margin:2px 0 4px}
+.ind .ex{font-size:12px;color:var(--muted);margin-bottom:10px}
+.scale{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0;width:1px;height:1px}
+.opt span{display:flex;align-items:center;justify-content:center;gap:6px;border:1.5px solid var(--line);
+  background:var(--paper2);border-radius:11px;padding:11px 8px;font-size:14px;font-weight:600;min-height:46px;cursor:pointer;text-align:center}
+.opt input:checked + span{border-color:var(--merah);background:var(--merah-bg);color:var(--merah)}
+.opt input:focus-visible + span{outline:3px solid var(--biru);outline-offset:2px}
+.note{margin-top:10px}
+.note input{min-height:44px;font-size:14px}
+
+.steps{margin:12px 0 4px}
+.steps .bar{height:7px;background:var(--line);border-radius:99px;overflow:hidden}
+.steps .bar i{display:block;height:100%;background:var(--merah);border-radius:99px}
+.steps .lbl{display:flex;justify-content:space-between;font-size:12px;font-weight:600;color:var(--muted);margin-bottom:6px}
+
+.list-item{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:8px 0;box-shadow:var(--shadow)}
+.list-item .t{font-weight:700}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.tag{font-size:11.5px;font-weight:700;padding:3px 8px;border-radius:99px;background:var(--paper2);border:1px solid var(--line);color:var(--muted)}
+.tag.ok{background:var(--hijau-bg);color:var(--hijau);border-color:transparent}
+.tag.warn{background:var(--amber-bg);color:var(--amber);border-color:transparent}
+.tag.bad{background:var(--biru-bg);color:var(--biru);border-color:transparent}
+.tag.info{background:var(--merah-bg);color:var(--merah);border-color:transparent}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;color:var(--muted);font-weight:700;white-space:nowrap}
+.bars{margin-top:6px}
+.barrow{margin:9px 0}
+.barrow .bl{display:flex;justify-content:space-between;font-size:13px;gap:10px}
+.barrow .bt{height:8px;background:var(--line);border-radius:99px;overflow:hidden;margin-top:4px}
+.barrow .bt i{display:block;height:100%;background:var(--merah);border-radius:99px}
+.empty{text-align:center;padding:30px 16px;color:var(--muted)}
+.empty b{display:block;color:var(--ink);margin-bottom:4px}
+
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--paper);border-top:1px solid var(--line);
+  padding:6px 8px calc(6px + env(safe-area-inset-bottom));display:flex}
+.nav div{max-width:680px;margin:0 auto;display:flex;width:100%}
+.nav button{flex:1;background:none;border:0;padding:7px 2px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;
+  font-size:11px;font-weight:700;color:var(--muted);border-radius:10px}
+.nav button .em{font-size:19px;line-height:1}
+.nav button[aria-current="page"]{color:var(--merah)}
+
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:86px;z-index:60;background:var(--ink);color:var(--bg);
+  padding:11px 16px;border-radius:99px;font-size:14px;font-weight:600;box-shadow:var(--shadow);max-width:90%}
+
+#print-area{display:none}
+.report{background:#fff;color:#000;padding:18px;border-radius:var(--r);border:1px solid var(--line);font-size:13.5px}
+.report h2{font-size:15px;text-align:center}
+.report .kop{text-align:center;border-bottom:2.5px solid #000;padding-bottom:8px;margin-bottom:12px}
+.report .kopimg{margin-bottom:12px}
+.report .kopimg img{width:100%;height:auto;display:block}
+.report .kopimg h2{margin:10px 0 0}
+.kop-prev{border:1px dashed var(--line);border-radius:12px;padding:8px;background:#fff;margin:10px 0;text-align:center}
+.kop-prev img{max-width:100%;height:auto;display:block;margin:0 auto}
+.report table{font-size:12.5px}
+.report th,.report td{border:1px solid #999;padding:5px 7px}
+.report .ttd{margin-top:26px;display:flex;justify-content:space-between;text-align:center;font-size:12.5px}
+@media print{
+  @page{size:A4;margin:14mm}
+  body{background:#fff}
+  #app,.nav,.toast{display:none!important}
+  #print-area{display:block!important}
+  .report{border:0;padding:0;border-radius:0}
+  .report .pagebreak{page-break-before:always}
+}
+
+/* =============== TEMA BARU: Indigo Neon =============== */
+:root{--bg:#EDEFFB;--paper:#FFFFFF;--paper2:#F4F5FE;--ink:#12132B;--muted:#5E617E;--line:#DCDFF3;
+  --merah:#2F36D6;--merah-bg:#E6E8FF;--hijau:#0F7B5F;--hijau-bg:#DFF5EC;--biru:#D6244B;--biru-bg:#FFE6EC;
+  --amber:#9A5B00;--amber-bg:#FFF0D2;--lime:#C8F169;--coral:#FF5C7A;--deep:#12132B;--r:20px;
+  --shadow:0 1px 2px rgba(18,19,43,.06),0 16px 30px -20px rgba(47,54,214,.45)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0B0C1E;--paper:#15172E;--paper2:#1B1E3A;
+  --ink:#ECEEFF;--muted:#9A9DC2;--line:#2A2D52;--merah:#98A0FF;--merah-bg:#1F2250;--hijau:#6FD9B3;--hijau-bg:#122A25;
+  --biru:#FF8CA3;--biru-bg:#34131D;--amber:#E8B65A;--amber-bg:#2B2210;--deep:#070817}}
+:root[data-theme="dark"]{--bg:#0B0C1E;--paper:#15172E;--paper2:#1B1E3A;--ink:#ECEEFF;--muted:#9A9DC2;--line:#2A2D52;
+  --merah:#98A0FF;--merah-bg:#1F2250;--hijau:#6FD9B3;--hijau-bg:#122A25;--biru:#FF8CA3;--biru-bg:#34131D;
+  --amber:#E8B65A;--amber-bg:#2B2210;--deep:#070817}
+.hero-num,.lg-tag,.stat b{font-family:"Unbounded","Plus Jakarta Sans",sans-serif;font-weight:700}
+h1,h2,h3{letter-spacing:-.02em}
+.top{background:color-mix(in srgb,var(--bg) 78%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);padding-top:max(12px,env(safe-area-inset-top))}
+.top .crest{background:var(--deep)!important;color:var(--lime)!important;border-radius:13px;font-family:"Unbounded",sans-serif;font-size:12px}
+.top h1{font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ttl{min-width:0;flex:1}
+.top .sub{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.iconbtn{display:grid;place-items:center;width:38px;height:38px;padding:0;border-radius:12px;background:var(--paper);color:var(--ink)}
+.iconbtn+.iconbtn{margin-left:0}.top-row{gap:8px}
+svg.ic{width:20px;height:20px}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--muted);box-shadow:0 0 0 3px var(--paper2)}
+.dot.ok{background:#22C27A}.dot.busy{background:var(--amber);animation:pl 1s infinite}.dot.err{background:var(--biru)}
+@keyframes pl{50%{opacity:.35}}
+.hero-card{background:radial-gradient(circle at 92% 8%,rgba(200,241,105,.28) 0 70px,transparent 71px),
+  radial-gradient(circle at 78% 112%,rgba(255,92,122,.4) 0 90px,transparent 91px),var(--deep);color:#fff;border:0;border-radius:28px;padding:22px}
+.hero-card .hero-num{color:var(--lime);font-size:34px}.hero-card .muted{color:rgba(255,255,255,.72)}
+.hero-card circle:first-of-type{stroke:rgba(255,255,255,.16)}
+.hero-card .stat{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.14)}
+.hero-card .stat b{color:#fff;font-size:20px}.hero-card .stat span{color:rgba(255,255,255,.7)}
+.grid .tile:first-child{grid-column:1/-1;flex-direction:row;align-items:center;justify-content:flex-start;gap:14px;min-height:0;
+  background:var(--merah-bg);border-color:transparent}
+.tile{border-radius:22px;min-height:112px;justify-content:space-between;gap:4px}
+.tile .em{width:40px;height:40px;border-radius:13px;background:var(--merah-bg);color:var(--merah);display:grid;place-items:center}
+.grid .tile:first-child .em{background:var(--merah);color:#fff}
+.nav{left:50%;right:auto;transform:translateX(-50%);width:min(660px,calc(100% - 20px));bottom:max(10px,env(safe-area-inset-bottom));
+  border:1px solid var(--line);border-radius:26px;padding:6px;background:color-mix(in srgb,var(--paper) 88%,transparent);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 18px 34px -16px rgba(18,19,43,.5)}
+.nav button{border-radius:20px;padding:8px 2px}.nav button .em{display:grid}
+.nav button[aria-current="page"]{background:var(--deep);color:var(--lime)}
+.toast{bottom:96px}
+.nav button{font-size:10.5px;min-width:0}
+tr[data-act]:active{background:var(--paper2)}
+.btn{border-radius:14px}.btn.primary{background:var(--deep);border-color:var(--deep);color:var(--lime)!important}
+.steps .bar i{background:linear-gradient(90deg,var(--merah),var(--coral))}
+.login{position:fixed;inset:0;z-index:100;overflow:auto;display:grid;place-items:center;padding:22px 16px;
+  background:radial-gradient(circle at 88% 6%,rgba(200,241,105,.9) 0 62px,transparent 63px),
+  radial-gradient(circle at 6% 94%,rgba(255,92,122,.85) 0 96px,transparent 97px),var(--deep)}
+.lg-wrap{width:100%;max-width:400px}
+.lg-tag{color:#fff;font-size:24px;line-height:1.25;margin:0 2px 20px}
+.lg-card{background:var(--paper);border-radius:28px;padding:26px 22px;box-shadow:0 30px 60px -28px rgba(0,0,0,.75)}
+.lg-card .crest{width:50px;height:50px;border-radius:16px;background:var(--deep);color:var(--lime);font-family:"Unbounded",sans-serif;margin-bottom:14px}
+.lg-card h1{font-size:18px}.lg-err{color:var(--biru);font-size:13px;font-weight:600;margin:12px 0 0}
+.lg-st{display:flex;align-items:center;gap:8px;margin-top:16px;font-size:12px;color:var(--muted)}
+details.lg-cfg{margin-top:10px;font-size:13px}details.lg-cfg summary{cursor:pointer;color:var(--muted)}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="print-area"></div>
+
+<script>
+"use strict";
+/* ============================ UTIL ============================ */
+const $ = (s,r=document)=>r.querySelector(s);
+const $$ = (s,r=document)=>Array.from(r.querySelectorAll(s));
+const esc = s => String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const uid = p => p+"-"+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+const num = v => (v===""||v==null||isNaN(v))?0:Number(v);
+function tglID(iso){if(!iso)return "-";const d=new Date(iso+"T00:00:00");if(isNaN(d))return iso;
+  const H=["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"],B=["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+  return H[d.getDay()]+", "+d.getDate()+" "+B[d.getMonth()]+" "+d.getFullYear();}
+function tglPendek(iso){if(!iso)return "-";const p=iso.split("-");return p.length===3?p[2]+"/"+p[1]+"/"+p[0]:iso;}
+function tglResmi(iso){if(!iso)return "-";const d=new Date(iso+"T00:00:00");if(isNaN(d))return iso;
+  const B=["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+  return d.getDate()+" "+B[d.getMonth()]+" "+d.getFullYear();}
+function tglLokal(d){d=d||new Date();const p=n=>String(n).padStart(2,"0");return d.getFullYear()+"-"+p(d.getMonth()+1)+"-"+p(d.getDate());}
+function toast(msg){const t=document.createElement("div");t.className="toast";t.textContent=msg;document.body.appendChild(t);setTimeout(()=>t.remove(),2400);}
+
+/* ============================ DASAR HUKUM / REGULASI ACUAN ============================ */
+const REGULASI = [
+  {n:"Permendiknas No. 13 Tahun 2007",d:"tentang Standar Kepala Sekolah/Madrasah — menetapkan supervisi akademik terhadap guru sebagai salah satu kompetensi inti kepala sekolah."},
+  {n:"Permendikbud No. 15 Tahun 2018",d:"tentang Pemenuhan Beban Kerja Guru, Kepala Sekolah, dan Pengawas Sekolah — mengatur kewajiban kepala sekolah melaksanakan supervisi akademik dan supervisi manajerial secara berkala."},
+  {n:"Permendikbud No. 22 Tahun 2016",d:"tentang Standar Proses Pendidikan Dasar dan Menengah — mengatur komponen minimal perencanaan pembelajaran (RPP/Modul Ajar): tujuan, materi, metode, media, sumber, dan penilaian."},
+  {n:"Permendikbudristek No. 12 Tahun 2024",d:"tentang Kurikulum pada PAUD, Jenjang Pendidikan Dasar dan Menengah — dasar penyusunan Capaian Pembelajaran (CP), Alur Tujuan Pembelajaran (ATP), dan Modul Ajar dalam Kurikulum Merdeka."},
+  {n:"Permendikdasmen No. 13 Tahun 2025",d:"tentang Pembelajaran Mendalam (Deep Learning) — menegaskan prinsip Berkesadaran (mindful), Bermakna (meaningful), dan Menggembirakan (joyful) yang wajib termuat dalam perencanaan dan pelaksanaan pembelajaran."}
+];
+
+/* ============================ DATA DEFAULT ============================ */
+const DEF_SETTINGS = {
+  sekolah:"UPTD SPF SD Negeri Lanas 1",
+  npsn:"20521645",
+  alamat:"Jl. Guce, Desa Lanas, Kecamatan Botolinggo, Kabupaten Bondowoso, Jawa Timur 68284",
+  kepsek:"Sahwanto, S.Pd.",
+  nipKepsek:"198111142008011012",
+  taAktif:"2026/2027",
+  daftarTA:["2026/2027","2027/2028","2028/2029"],
+  supervisorDefault:"Sahwanto, S.Pd.",
+  periode:["Semester 1","Semester 2"],
+  jenisDokumen:["Modul Ajar","RPP","Rencana Pembelajaran Mendalam (RPM)"],
+  pinAdmin:"1234",
+  jenisTL:["Pendampingan individual","Coaching penyusunan modul ajar","Diskusi kelompok kerja guru (KKG)","Workshop/IHT penyusunan perangkat","Supervisi ulang","Rujukan ke komunitas belajar","Tindak lanjut lainnya"],
+  statusTL:["Belum","Direncanakan","Dalam Proses","Selesai"],
+  tempatPengesahan:"Lanas",
+  modeCatatan:"manual",
+  modeTL:"manual",
+  kopGambar:"",
+  minSupervisi:2,
+  jarakSupervisi:8
+};
+const DEF_GURU = [
+  {id:"g1",nama:"Muhammad Rifa'i, S.Pd.I",nip:"",tugas:"Guru Kelas 1",kelas:"1 / Fase A",mapel:"Tematik"},
+  {id:"g2",nama:"Anik Nurwidiastutik, S.Pd.",nip:"",tugas:"Guru Kelas 2",kelas:"2 / Fase A",mapel:"Tematik"},
+  {id:"g3",nama:"Wiwin Damayanti, S.Pd.SD.",nip:"",tugas:"Guru Kelas 3",kelas:"3 / Fase B",mapel:"Tematik"},
+  {id:"g4",nama:"Evi Susilowati, S.Pd.",nip:"",tugas:"Guru Kelas 4",kelas:"4 / Fase B",mapel:"Tematik"},
+  {id:"g5",nama:"Ratna Kartika Sari, S.Pd.",nip:"",tugas:"Guru Kelas 5",kelas:"5 / Fase C",mapel:"Tematik"},
+  {id:"g6",nama:"Arniwatiningsih, S.Pd.",nip:"",tugas:"Guru Kelas 6",kelas:"6 / Fase C",mapel:"Tematik"},
+  {id:"g7",nama:"Azise, S.Pd.I",nip:"",tugas:"Guru PAI",kelas:"1-6 / Fase A-C",mapel:"Pendidikan Agama Islam"},
+  {id:"g8",nama:"Mahfud Efendi, S.Pd.",nip:"",tugas:"Guru PJOK",kelas:"1-6 / Fase A-C",mapel:"PJOK"}
+];
+
+const A_TEKS=[
+ "Identitas dokumen (satuan pendidikan, kelas/fase, mata pelajaran, semester, alokasi waktu) dicantumkan lengkap.",
+ "Capaian Pembelajaran (CP) dan Alur Tujuan Pembelajaran (ATP) dicantumkan dan sesuai fase peserta didik.",
+ "Tujuan pembelajaran dirumuskan jelas, spesifik, dan dapat diukur.",
+ "Materi ajar dan sumber/bahan belajar dicantumkan serta relevan dengan tujuan pembelajaran.",
+ "Model, metode, dan media pembelajaran dicantumkan serta sesuai karakteristik murid dan materi.",
+ "Langkah kegiatan pembelajaran disusun sistematis mencakup pendahuluan, inti, dan penutup.",
+ "Rencana asesmen (diagnostik, formatif, dan/atau sumatif) beserta instrumennya dicantumkan.",
+ "Alokasi waktu setiap tahap kegiatan proporsional dan realistis untuk dilaksanakan.",
+ "Lampiran pendukung (LKPD, rubrik penilaian, bahan bacaan/media) tersedia dan sesuai kebutuhan.",
+ "Dokumen disusun sesuai format sekolah serta ditandatangani/diverifikasi sesuai prosedur."
+];
+const B_TEKS=[
+ "Kegiatan pendahuluan memuat apersepsi dan penyampaian tujuan yang mengaitkan pengalaman/konteks murid.",
+ "Tahap Memahami dirancang memuat pemantik/fenomena kontekstual yang memicu rasa ingin tahu murid.",
+ "Tahap Mengaplikasi dirancang memuat aktivitas penerapan konsep pada tugas atau proyek nyata.",
+ "Tahap Merefleksi dirancang memuat kegiatan refleksi murid dan rencana umpan balik dari guru.",
+ "Kegiatan penutup memuat rencana simpulan bersama dan tindak lanjut pembelajaran.",
+ "Rencana asesmen selaras dengan tujuan pembelajaran dan tahapan kegiatan yang dirancang.",
+ "Rubrik atau kriteria penilaian dirumuskan secara jelas dan dapat diukur."
+];
+const C_TEKS=[
+ "Berkesadaran (mindful): rencana menumbuhkan kesadaran murid atas tujuan dan proses belajarnya sendiri.",
+ "Bermakna (meaningful): rencana mengaitkan materi dengan kehidupan nyata/konteks lokal sehingga bermakna bagi murid.",
+ "Menggembirakan (joyful): rencana memuat aktivitas yang menyenangkan dan memotivasi tanpa membebani murid secara berlebihan."
+];
+const D_TEKS=[
+ "Rencana memuat penyajian informasi dengan lebih dari satu cara (representasi beragam).",
+ "Rencana memberi pilihan cara murid mengekspresikan pemahaman (produk/hasil beragam).",
+ "Tugas/konteks dirancang mempertimbangkan minat dan kesiapan belajar murid yang beragam.",
+ "Rencana mengakomodasi kebutuhan murid berkebutuhan khusus atau yang memerlukan perhatian khusus, bila ada."
+];
+
+const DEF_INSTRUMEN = {
+  versi:"1.0",
+  berlaku:"2026/2027",
+  skala:[{n:4,l:"Sangat Baik"},{n:3,l:"Baik"},{n:2,l:"Cukup"},{n:1,l:"Kurang"}],
+  bagianA:A_TEKS.map((t,i)=>({id:"a"+(i+1),teks:t,aktif:true})),
+  bagianB:B_TEKS.map((t,i)=>({id:"b"+(i+1),teks:t,aktif:true})),
+  bagianC:C_TEKS.map((t,i)=>({id:"c"+(i+1),teks:t,aktif:true})),
+  bagianD:D_TEKS.map((t,i)=>({id:"d"+(i+1),teks:t,aktif:true})),
+  kategori:[
+    {min:90,label:"Sangat Baik",warna:"ok"},
+    {min:80,label:"Baik",warna:"ok"},
+    {min:70,label:"Cukup",warna:"warn"},
+    {min:0, label:"Perlu Pembinaan",warna:"bad"}
+  ]
+};
+const BAGIAN_LABEL = {bagianA:"Bagian A — Kelengkapan Administratif",bagianB:"Bagian B — Kualitas & Tahapan Pembelajaran Mendalam",bagianC:"Bagian C — Prinsip Pembelajaran Mendalam",bagianD:"Bagian D — Keberpihakan pada Murid"};
+
+/* ============================ STATE + PENYIMPANAN ============================ */
+let S = {settings:null, guru:null, instrumen:null, sup:[], jadwal:[]};
+let DB = null, dbReady = false;
+const LSK = "supervisiapp.lanas1.v1";
+/* Tempel URL aplikasi web Google Apps Script (berakhiran /exec) di sini, atau isi lewat layar login. */
+const SHEETS_URL = "https://script.google.com/macros/s/AKfycbyXWF07q-C0lEhFQTR4_3K6a5Qj2CNV85C2aIP9X-GBvsuWe--PYWmWVFSwRVxaaCFz/exec";
+const IC={"home": "<path d=\"M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z\"/>", "guru": "<circle cx=\"9\" cy=\"8\" r=\"3.5\"/><path d=\"M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6\"/>", "obs": "<path d=\"M5 3h10l4 4v14H5z\"/><path d=\"M9 12h6M9 16h6M9 8h3\"/>", "riw": "<path d=\"M3 7h7l2 2h9v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z\"/>", "set": "<circle cx=\"12\" cy=\"12\" r=\"3\"/><path d=\"M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1\"/>", "print": "<path d=\"M7 9V3h10v6M7 17H4v-7h16v7h-3M7 14h10v7H7z\"/>", "book": "<path d=\"M4 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4zM20 4h-6v14h6z\"/>", "out": "<path d=\"M15 4h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-4M10 8l-4 4 4 4M6 12h10\"/>", "sync": "<path d=\"M20 12a8 8 0 1 1-2.3-5.7M20 4v4h-4\"/>"};
+const ico=n=>`<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${IC[n]||""}</svg>`;
+
+IC.cal='<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8 14h3M13 14h3M8 17.5h3"/>';
+
+function loadLocal(){
+  try{
+    const raw = localStorage.getItem(LSK);
+    if(raw){const d = JSON.parse(raw);
+      S.settings = Object.assign({}, DEF_SETTINGS, d.settings||{});
+      S.guru = d.guru || DEF_GURU.slice();
+      S.instrumen = d.instrumen || JSON.parse(JSON.stringify(DEF_INSTRUMEN));
+      S.sup = d.sup || [];
+      S.jadwal = d.jadwal || [];
+      return;}
+  }catch(e){}
+  S.settings = JSON.parse(JSON.stringify(DEF_SETTINGS));
+  S.guru = JSON.parse(JSON.stringify(DEF_GURU));
+  S.instrumen = JSON.parse(JSON.stringify(DEF_INSTRUMEN));
+  S.sup = [];
+  S.jadwal = [];
+}
+function saveLocal(){ try{ localStorage.setItem(LSK, JSON.stringify(S)); }catch(e){} }
+const KEYMAP={settings:"settings",guru:"guru",instrumen:"instrumen",sup:"supervisi",jadwal:"jadwal"};
+const LOCAL_AKUN=[{user:"admin",nama:"Administrator",sandi:"admin123",peran:"Admin"},{user:"supervisor",nama:"Supervisor",sandi:"supervisor123",peran:"Supervisor"}]; /* hanya untuk mode lokal (tanpa Google Sheets) */
+let SES=null, sync="off", lgErr="", lgUser="", lgBusy=false;
+try{ SES=JSON.parse(sessionStorage.getItem("supervisiapp.ses")||"null"); }catch(e){}
+const sheetsUrl=()=>{ try{ return (localStorage.getItem("supervisiapp.url")||SHEETS_URL).trim(); }catch(e){ return SHEETS_URL; } };
+function setSync(v){ sync=v; const d=$(".dot"); if(d) d.className="dot "+v; }
+async function gs(aksi,data){
+  let r; try{ r=await fetch(sheetsUrl(),{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(Object.assign({aksi,token:SES&&SES.token},data||{}))}); }
+  catch(e){ throw new Error("Tidak dapat terhubung ke Google Sheets. Periksa URL layanan dan koneksi internet."); }
+  let j; try{ j=await r.json(); }catch(e){ throw new Error("Respons layanan tidak dikenali. Pastikan penerapan Apps Script memakai akses \"Siapa saja\"."); }
+  if(!j.ok) throw new Error(j.pesan||"Permintaan ditolak.");
+  return j;
+}
+function ringkasSup(){
+  return {kolom:["ID","Tanggal","Guru","Dokumen","Mapel","Kelas/Fase","Semester","TA","Supervisor","Skor","Skor Maks","Persen","Kategori","Status Tindak Lanjut"],
+    baris:S.sup.map(o=>{ const g=S.guru.find(x=>x.id===o.guruId), h=hitung(o);
+      return [o.id,o.tanggal||"",g?g.nama:"",o.jenisDokumen||"",o.mapel||"",o.kelasFase||"",o.semester||"",o.taAktif||"",o.supervisor||"",h.total,h.maxTot,h.persen,h.kategori.label,(o.tl&&o.tl.status)||""]; })};
+}
+async function persist(what){
+  saveLocal();
+  if(!SES||!SES.token||!sheetsUrl()) return;
+  const ks=what?[what]:Object.keys(KEYMAP);
+  setSync("busy");
+  try{
+    for(const k of ks) await gs("simpan",{key:KEYMAP[k],data:S[k],tabel:k==="sup"?ringkasSup():(k==="jadwal"?ringkasJadwal():undefined)});
+    setSync("ok");
+  }catch(e){ setSync("err"); toast(e.message); }
+}
+async function initData(){
+  if(!SES||!SES.token||!sheetsUrl()){ setSync("off"); return; }
+  setSync("busy");
+  try{
+    const r=await gs("muat"), d=r.data||{}; let ada=false;
+    if(d.settings){ S.settings=Object.assign({},DEF_SETTINGS,d.settings); ada=true; }
+    if(d.guru){ S.guru=d.guru; ada=true; }
+    if(d.instrumen){ S.instrumen=d.instrumen; ada=true; }
+    if(d.supervisi){ S.sup=d.supervisi; ada=true; }
+    if(d.jadwal){ S.jadwal=d.jadwal; ada=true; }
+    saveLocal(); setSync("ok"); render();
+    if(!ada) await persist();
+  }catch(e){ setSync("err"); toast(e.message); if(/Sesi berakhir/.test(e.message)) keluar(); }
+}
+async function masuk(){
+  const u=$("#lg-user").value.trim(), p=$("#lg-pass").value; lgUser=u;
+  if(!u||!p){ lgErr="Isi nama pengguna dan kata sandi."; render(); return; }
+  lgBusy=true; lgErr=""; render();
+  try{
+    if(sheetsUrl()){ const r=await gs("login",{user:u,sandi:p}); SES={user:r.user,nama:r.nama,peran:r.peran,token:r.token}; }
+    else{ const a=LOCAL_AKUN.find(x=>x.user===u.toLowerCase()&&x.sandi===p); if(!a) throw new Error("Nama pengguna atau kata sandi tidak cocok.");
+      SES={user:a.user,nama:a.nama,peran:a.peran,token:""}; }
+    try{ sessionStorage.setItem("supervisiapp.ses",JSON.stringify(SES)); }catch(e){}
+    adminOK=SES.peran==="Admin"; lgBusy=false; lgUser=""; route="beranda"; render(); initData();
+  }catch(e){ lgBusy=false; lgErr=e.message; render(); }
+}
+function keluar(){
+  if(SES&&SES.token&&sheetsUrl()) gs("logout").catch(()=>{});
+  SES=null; adminOK=false; draft=null; setSync("off");
+  try{ sessionStorage.removeItem("supervisiapp.ses"); }catch(e){} render();
+}
+function viewLogin(){
+  const t=S.settings, url=sheetsUrl();
+  return `<div class="login"><div class="lg-wrap">
+    <p class="lg-tag">Perencanaan yang matang, pembelajaran yang bermakna.</p>
+    <div class="lg-card">
+      <div class="crest">SP</div>
+      <h1>${esc(t.sekolah)}</h1>
+      <p class="small muted" style="margin-top:4px">Masuk untuk membuka aplikasi supervisi perencanaan pembelajaran.</p>
+      <label class="f"><span>Nama pengguna</span><input id="lg-user" autocomplete="username" autocapitalize="none" value="${esc(lgUser)}"></label>
+      <label class="f"><span>Kata sandi</span><input id="lg-pass" type="password" autocomplete="current-password"></label>
+      ${lgErr?`<p class="lg-err" role="alert">${esc(lgErr)}</p>`:""}
+      <button class="btn primary block" style="margin-top:16px" data-act="login" ${lgBusy?"disabled":""}>${lgBusy?"Memeriksa…":"Masuk"}</button>
+      <div class="lg-st"><span class="dot ${url?"ok":"off"}"></span>${url?"Terhubung ke Google Sheets":"Mode lokal: data hanya di perangkat ini"}</div>
+      <details class="lg-cfg"><summary>Sambungan Google Sheets</summary>
+        <label class="f"><span>URL aplikasi web (berakhiran /exec)</span><input id="lg-url" inputmode="url" value="${esc(url)}" placeholder="https://script.google.com/macros/s/…/exec"></label>
+        <button class="btn sm block" style="margin-top:8px" data-act="url-simpan">Simpan URL</button></details>
+    </div></div></div>`;
+}
+document.addEventListener("keydown",e=>{ if(e.key==="Enter"&&e.target.id==="lg-pass"){ masuk(); }});
+
+/* ============================ PERHITUNGAN ============================ */
+const BAGIAN_KEYS = ["bagianA","bagianB","bagianC","bagianD"];
+const aktifBagian = k => S.instrumen[k].filter(x=>x.aktif);
+const skorTertinggi = ()=>Math.max(4,...S.instrumen.skala.map(x=>num(x.n)));
+
+function hitung(o){
+  let total=0, maxTot=0; const per={};
+  BAGIAN_KEYS.forEach(k=>{
+    const arr=aktifBagian(k); const skorKey="skor"+k.slice(6);
+    const skor = arr.reduce((s,i)=>s+num(o[skorKey]&&o[skorKey][i.id]),0);
+    const mx = arr.length*4;
+    per[k] = {skor,maks:mx,persen: mx? Math.round((skor/mx)*1000)/10 : 0, n:arr.length};
+    total+=skor; maxTot+=mx;
+  });
+  const persen = maxTot? Math.round((total/maxTot)*1000)/10 : 0;
+  return {per,total,maxTot,persen,kategori:kategoriDari(persen)};
+}
+function kategoriDari(p){
+  const k = S.instrumen.kategori.slice().sort((a,b)=>b.min-a.min);
+  for(const x of k){ if(p>=num(x.min)) return x; }
+  return k[k.length-1]||{label:"-",warna:""};
+}
+
+/* ============================ PANDUAN CATATAN OTOMATIS ============================ */
+const PANDUAN = {
+  a1:{a:"kelengkapan identitas dokumen",c:"Satuan pendidikan, kelas/fase, mapel, semester, dan alokasi waktu tercantum lengkap di kop dokumen."},
+  a2:{a:"kesesuaian CP dan ATP",c:"CP dikutip sesuai fase; ATP diturunkan runtut dari CP menuju tujuan pembelajaran."},
+  a3:{a:"kejelasan rumusan tujuan pembelajaran",c:"Tujuan memuat kompetensi dan konten yang terukur, misalnya \"murid dapat menjelaskan ... melalui ...\"."},
+  a4:{a:"kelengkapan materi dan sumber belajar",c:"Materi pokok dan sumber (buku, media, bahan lokal) dicantumkan serta sesuai tujuan."},
+  a5:{a:"kesesuaian model, metode, dan media",c:"Model/metode dipilih sesuai karakteristik murid dan materi; media disebutkan secara konkret."},
+  a6:{a:"sistematika langkah kegiatan",c:"Langkah kegiatan tersusun rapi: pendahuluan, inti, penutup, dengan urutan yang logis."},
+  a7:{a:"kelengkapan rencana asesmen",c:"Jenis asesmen (diagnostik/formatif/sumatif) dan instrumennya dicantumkan secara eksplisit."},
+  a8:{a:"kewajaran alokasi waktu",c:"Waktu tiap tahap kegiatan dirinci dan totalnya sesuai jam pelajaran yang tersedia."},
+  a9:{a:"kelengkapan lampiran pendukung",c:"LKPD, rubrik, atau bahan bacaan dilampirkan dan sesuai dengan kegiatan yang dirancang."},
+  a10:{a:"kepatuhan format dan pengesahan dokumen",c:"Dokumen memakai format baku sekolah dan telah diparaf/ditandatangani sesuai prosedur."},
+  b1:{a:"apersepsi dan penyampaian tujuan pada pendahuluan",c:"Pendahuluan memuat pertanyaan pemantik yang mengaitkan pengalaman murid dengan tujuan hari itu."},
+  b2:{a:"rancangan tahap Memahami",c:"Disediakan fenomena/gambar/cerita kontekstual sebagai pemantik sebelum murid diajak memahami konsep."},
+  b3:{a:"rancangan tahap Mengaplikasi",c:"Murid diarahkan mengerjakan tugas atau proyek nyata yang menerapkan konsep yang dipelajari."},
+  b4:{a:"rancangan tahap Merefleksi",c:"Disediakan pertanyaan reflektif dan rencana umpan balik guru di akhir kegiatan inti."},
+  b5:{a:"rancangan kegiatan penutup",c:"Penutup memuat simpulan bersama murid dan rencana tindak lanjut/tugas rumah bila perlu."},
+  b6:{a:"keselarasan asesmen dengan tujuan dan tahapan",c:"Bentuk asesmen mengukur langsung capaian tujuan pada tiap tahap kegiatan yang dirancang."},
+  b7:{a:"kejelasan rubrik/kriteria penilaian",c:"Rubrik memuat kriteria dan level capaian yang dapat diamati dan diukur secara objektif."},
+  c1:{a:"prinsip berkesadaran (mindful)",c:"Rencana memuat cara murid diajak menyadari tujuan belajarnya sendiri, misalnya melalui pertanyaan reflektif di awal."},
+  c2:{a:"prinsip bermakna (meaningful)",c:"Materi dikaitkan dengan konteks nyata/lokal, misalnya kegiatan pertanian atau keseharian di Botolinggo."},
+  c3:{a:"prinsip menggembirakan (joyful)",c:"Kegiatan dirancang menyenangkan dan tidak membebani, misalnya melalui permainan atau kerja kelompok."},
+  d1:{a:"representasi informasi yang beragam",c:"Informasi disampaikan lewat lebih dari satu cara: penjelasan lisan, gambar/peraga, dan teks bacaan."},
+  d2:{a:"keberagaman cara murid berekspresi",c:"Murid diberi pilihan menjawab dengan menggambar, bercerita, menulis, atau presentasi lisan."},
+  d3:{a:"diferensiasi konten/proses/produk",c:"Tugas dirancang berjenjang atau bertema dekat dengan minat murid agar tetap menantang tiap murid."},
+  d4:{a:"akomodasi murid berkebutuhan khusus",c:"Rencana menyebutkan penyesuaian tempat duduk, tugas, atau pendampingan bagi murid yang memerlukan."}
+};
+const CONTOH_UMUM = "Tulis secara spesifik bagian mana dalam dokumen yang menjadi dasar penilaian ini.";
+function huruf(t){t=String(t||"");return t.charAt(0).toUpperCase()+t.slice(1);}
+function aspekDari(x){
+  const p=PANDUAN[x.id]; if(p&&p.a) return p.a;
+  let t=String(x.teks||"").trim().replace(/[.\s]+$/,"");
+  const k=t.indexOf(":"); if(k>0&&k<40) t=t.slice(0,k);
+  if(t.length>70){ t=t.slice(0,70); const j=t.lastIndexOf(" "); if(j>30) t=t.slice(0,j); }
+  if(!/^[A-Z]{2}/.test(t)) t=t.charAt(0).toLowerCase()+t.slice(1);
+  return t;
+}
+function contohDari(x){ const p=PANDUAN[x.id]; return (p&&p.c)||CONTOH_UMUM; }
+function teksCatatan(x,skor){
+  const a=huruf(aspekDari(x)), top=skorTertinggi(), n=num(skor);
+  if(!n) return "";
+  if(n>=top) return a+" sudah dirancang lengkap, jelas, dan sangat sesuai; layak menjadi contoh praktik baik penyusunan perangkat.";
+  if(n===top-1) return a+" sudah dirancang dengan baik dan sesuai kebutuhan; masih ada bagian kecil yang dapat disempurnakan.";
+  if(n===top-2) return a+" baru dirancang sebagian dan belum sepenuhnya sesuai; perlu perbaikan dan pendampingan penyusunan.";
+  return a+" belum tampak atau baru sedikit termuat dalam dokumen; perlu pendampingan langsung dalam penyusunannya.";
+}
+function daftarIndikator(){ return BAGIAN_KEYS.flatMap(k=>aktifBagian(k).map(x=>({k,x}))); }
+function skorKeyOf(k){ return "skor"+k.slice(6); }
+function catKeyOf(k){ return "cat"+k.slice(6); }
+
+function terapkanCatatan(k,id,paksa){
+  const x=S.instrumen[k].find(i=>i.id===id); if(!x) return false;
+  const skor=num(draft[skorKeyOf(k)]&&draft[skorKeyOf(k)][id]); if(!skor) return false;
+  draft[catKeyOf(k)]=draft[catKeyOf(k)]||{};
+  if(!paksa && draft[catKeyOf(k)][id]) return false;
+  draft[catKeyOf(k)][id]=teksCatatan(x,skor); return true;
+}
+function isiCatatanSemua(keys){
+  let n=0; keys.forEach(k=>{ aktifBagian(k).forEach(x=>{ if(terapkanCatatan(k,x.id,false)) n++; }); });
+  return n;
+}
+function umumOtomatis(d){ return daftarIndikator().some(({k,x})=>num(d[skorKeyOf(k)]&&d[skorKeyOf(k)][x.id])>0); }
+function isiUmumOtomatis(paksa){
+  if(!umumOtomatis(draft)) return false;
+  const h=hitung(draft);
+  const kuat=[], lemah=[];
+  daftarIndikator().forEach(({k,x})=>{
+    const s=num(draft[skorKeyOf(k)]&&draft[skorKeyOf(k)][x.id]); if(!s) return;
+    const top=skorTertinggi();
+    if(s>=top-1) kuat.push(aspekDari(x)); else if(s<=top-2) lemah.push(aspekDari(x));
+  });
+  const catatanUmum = "Perencanaan pembelajaran yang disusun "+draft_guruNama()+" memperoleh skor "+h.persen+"% dengan kategori \""+h.kategori.label+"\". "
+    + (h.persen>=80 ? "Secara umum dokumen sudah tersusun sesuai ketentuan dan siap diterapkan di kelas."
+       : h.persen>=70 ? "Dokumen sudah menunjukkan kelengkapan yang cukup, namun beberapa komponen masih perlu disempurnakan."
+       : "Dokumen memerlukan pembinaan lebih lanjut agar seluruh komponen perencanaan pembelajaran terpenuhi.");
+  const kekuatan = kuat.length? "Kekuatan dokumen terlihat pada "+sebut(kuat)+"." : "Belum ada komponen yang menonjol pada penilaian ini.";
+  const area = lemah.length? "Area yang perlu dikembangkan meliputi "+sebut(lemah)+"." : "Tidak ada area yang menonjol perlu perbaikan segera.";
+  const rekomendasi = lemah.length
+    ? "Disarankan pendampingan penyusunan perangkat pembelajaran secara individual atau melalui KKG, difokuskan pada "+sebut(lemah)+"."
+    : "Pertahankan kualitas penyusunan perangkat pembelajaran dan dapat dijadikan rujukan/contoh bagi rekan sejawat.";
+  const au={catatanUmum,kekuatan,area,rekomendasi};
+  if(paksa || !draft.autoUmum){ Object.assign(draft,au); draft.autoUmum=au; return true; }
+  return false;
+}
+function draft_guruNama(){ const g=S.guru.find(x=>x.id===draft.guruId); return g? g.nama : "guru"; }
+function sebut(a){ if(a.length<=1) return a.join(""); return a.slice(0,-1).join(", ")+" serta "+a[a.length-1]; }
+
+function isiTLOtomatis(paksa){
+  if(!umumOtomatis(draft)) return false;
+  const h=hitung(draft);
+  let jenis=[], target="2 minggu", rekomendasi="";
+  if(h.persen<70){ jenis=["Pendampingan individual","Coaching penyusunan modul ajar"]; target="2 minggu";
+    rekomendasi="Kepala sekolah/supervisor mendampingi guru menyusun ulang komponen yang belum lengkap, dilanjutkan supervisi ulang."; }
+  else if(h.persen<80){ jenis=["Diskusi kelompok kerja guru (KKG)"]; target="1 bulan";
+    rekomendasi="Guru mendiskusikan penyempurnaan dokumen bersama KKG dan mengumpulkan hasil revisi kepada kepala sekolah."; }
+  else { jenis=["Rujukan ke komunitas belajar"]; target="Semester berjalan";
+    rekomendasi="Dokumen dapat dijadikan referensi/contoh praktik baik di komunitas belajar sekolah."; }
+  const au={jenis:jenis.join("|"),rekomendasi,target};
+  if(paksa || !draft.autoTL){ draft.tl=draft.tl||{}; draft.tl.jenis=jenis; draft.tl.rekomendasi=rekomendasi; draft.tl.target=target; draft.autoTL=au; return true; }
+  return false;
+}
+
+/* ============================ JADWAL SUPERVISI AKADEMIK ============================ */
+/* Siklus supervisi klinis: pra-observasi (supervisi perencanaan) -> observasi (supervisi pelaksanaan pembelajaran)
+   -> pasca-observasi (refleksi & umpan balik) -> tindak lanjut. Selaras Permendikbud 15/2018, Kurikulum Merdeka
+   (Permendikbudristek 12/2024) dan Pembelajaran Mendalam (Permendikdasmen 13/2025) yang tercantum pada Dasar Hukum. */
+const TAHAP = [
+  {k:"pra",  pendek:"Pra-Observasi",  label:"Pra-Observasi (Supervisi Perencanaan)", warna:"info", jam:"09.30–10.30 WIB",
+   ket:"Pertemuan awal: telaah modul ajar/RPM dan kesepakatan fokus observasi."},
+  {k:"obs",  pendek:"Observasi Pembelajaran", label:"Observasi (Supervisi Pelaksanaan Pembelajaran)", warna:"warn", jam:"07.30–09.00 WIB",
+   ket:"Observasi kelas: tahap Memahami–Mengaplikasi–Merefleksi dan prinsip pembelajaran mendalam."},
+  {k:"pasca",pendek:"Pasca-Observasi",label:"Pasca-Observasi (Refleksi & Umpan Balik)", warna:"ok", jam:"10.00–11.00 WIB",
+   ket:"Refleksi bersama, umpan balik hasil observasi, dan penyusunan rencana tindak lanjut."},
+  {k:"tl",   pendek:"Tindak Lanjut",  label:"Tindak Lanjut / Pembinaan", warna:"", jam:"",
+   ket:"Pendampingan, coaching, atau KKG sesuai hasil supervisi."}
+];
+const STATUS_JADWAL = ["Terjadwal","Selesai","Ditunda"];
+const tahapOf = k => TAHAP.find(t=>t.k===k)||TAHAP[0];
+const statusWarna = st => st==="Selesai"?"ok":st==="Ditunda"?"warn":"info";
+let jdSem=null, jdTahap="semua", jdKe="semua";
+const jdSemAktif = ()=> jdSem||(S.settings.periode[0]||"Semester 1");
+/* Ketentuan: setiap guru disupervisi minimal 2 kali dalam 1 semester (dapat diubah di Pengaturan). */
+const minSup = ()=> Math.max(1, parseInt(S.settings.minSupervisi)||2);
+const jarakSup = ()=> Math.max(1, parseInt(S.settings.jarakSupervisi)||8);
+const keOf = j => parseInt(j.ke)||1;
+function akhirSemester(sem,ta){
+  const y=parseInt(String(ta).slice(0,4))||new Date().getFullYear();
+  return S.settings.periode.indexOf(sem)===1 ? (y+1)+"-06-20" : y+"-12-19";
+}
+function pemenuhan(){
+  const sem=jdSemAktif(), ta=S.settings.taAktif, mn=minSup(), jd=jadwalSemester();
+  return S.guru.map(g=>{
+    const ks=new Set(jd.filter(j=>j.guruId===g.id).map(keOf));
+    const real=S.sup.filter(o=>o.guruId===g.id&&o.semester===sem&&o.taAktif===ta).length;
+    return {g, jadwal:ks.size, real, ok:ks.size>=mn};
+  });
+}
+
+function parseISO(s){ return new Date(s+"T00:00:00"); }
+function nextWork(iso){ const d=parseISO(iso); while(d.getDay()===0||d.getDay()===6) d.setDate(d.getDate()+1); return tglLokal(d); }
+function addWork(iso,n){ const d=parseISO(iso); let c=0; while(c<n){ d.setDate(d.getDate()+1); if(d.getDay()!==0&&d.getDay()!==6) c++; } return tglLokal(d); }
+function awalSemester(sem,ta){
+  const y=parseInt(String(ta).slice(0,4))||new Date().getFullYear();
+  return S.settings.periode.indexOf(sem)===1 ? nextWork((y+1)+"-02-02") : nextWork(y+"-08-03");
+}
+function urutTahap(k){ return TAHAP.findIndex(t=>t.k===k); }
+function jadwalSemester(){
+  const sem=jdSemAktif(), ta=S.settings.taAktif;
+  return (S.jadwal||[]).filter(j=>j.semester===sem&&j.ta===ta)
+    .sort((a,b)=>(a.tanggal||"").localeCompare(b.tanggal||"")||urutTahap(a.tahap)-urutTahap(b.tahap));
+}
+function ringkasJadwal(){
+  return {kolom:["ID","Nama Guru","Jabatan/Kelas","Supervisi Ke","Tahap","Tanggal","Jam","Semester","TA","Keterangan","Status"],
+    baris:(S.jadwal||[]).slice().sort((a,b)=>(a.tanggal||"").localeCompare(b.tanggal||"")).map(j=>{
+      const g=S.guru.find(x=>x.id===j.guruId)||{};
+      return [j.id,g.nama||"",[g.tugas,g.kelas].filter(Boolean).join(" / "),keOf(j),tahapOf(j.tahap).pendek,j.tanggal||"",j.jam||"",j.semester||"",j.ta||"",j.ket||"",j.status||""]; })};
+}
+function barisJadwal(list,aksi){
+  return list.map((j,i)=>{
+    const g=S.guru.find(x=>x.id===j.guruId)||{}, T=tahapOf(j.tahap);
+    const attr = aksi? ` data-act="jadwal-edit" data-id="${j.id}" style="cursor:pointer"` : "";
+    return `<tr${attr}>
+      <td>${i+1}</td>
+      <td><b>${esc(g.nama||"(guru terhapus)")}</b></td>
+      <td>${esc(g.tugas||"-")}${g.kelas?`<div class="xsmall muted">${esc(g.kelas)}</div>`:""}</td>
+      <td>${esc(tglID(j.tanggal))}${j.jam?`<div class="xsmall muted">${esc(j.jam)}</div>`:""}</td>
+      <td><span class="tag">Supervisi ke-${keOf(j)}</span> <span class="tag ${T.warna}">${esc(T.pendek)}</span> <span class="tag ${statusWarna(j.status)}">${esc(j.status||"Terjadwal")}</span>
+        <div class="xsmall muted" style="margin-top:4px">${esc(j.ket||T.ket)}</div></td></tr>`; }).join("");
+}
+function viewJadwal(){
+  const t=S.settings, sem=jdSemAktif(), semua=jadwalSemester();
+  const list = semua.filter(j=>(jdTahap==="semua"||j.tahap===jdTahap)&&(jdKe==="semua"||String(keOf(j))===String(jdKe)));
+  const maxKe = semua.length? Math.max(...semua.map(keOf)) : 0, mn=minSup(), pm=pemenuhan(), kurang=pm.filter(x=>!x.ok);
+  const jmlKe = Math.max(mn,maxKe);
+  const chipKe=(k,l)=>`<button class="btn sm ${String(jdKe)===String(k)?"primary":""}" data-act="jd-ke" data-k="${k}">${l}</button>`;
+  const selesai = semua.filter(j=>j.status==="Selesai").length;
+  const chip=(k,l)=>`<button class="btn sm ${jdTahap===k?"primary":""}" data-act="jd-tahap" data-k="${k}">${l}</button>`;
+  return layout(`<div class="sec-title">JADWAL SUPERVISI AKADEMIK</div>
+  <div class="card">
+    <div class="spread"><b>Tahun Pelajaran ${esc(t.taAktif)}</b><span class="tag info">${semua.length} agenda</span></div>
+    <label class="f"><span>Semester</span>
+      <select id="jd-sem">${t.periode.map(p=>`<option ${p===sem?"selected":""}>${esc(p)}</option>`).join("")}</select></label>
+    <div class="stats" style="margin-top:12px">
+      <div class="stat"><b>${semua.length-selesai}</b><span>Belum dilaksanakan</span></div>
+      <div class="stat"><b>${selesai}</b><span>Selesai</span></div>
+    </div>
+    <div class="btnrow" style="margin-top:12px">
+      <button class="btn primary" data-act="jadwal-edit">+ Tambah Agenda</button>
+      <button class="btn" data-act="jadwal-gen">✨ Susun Otomatis</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="spread"><b>Target minimal ${mn}× supervisi per guru</b>
+      <span class="tag ${!semua.length?"":kurang.length?"warn":"ok"}">${!semua.length?"Belum dijadwalkan":kurang.length?kurang.length+" guru belum terpenuhi":"Terpenuhi"}</span></div>
+    <p class="xsmall muted" style="margin-top:6px">Setiap guru wajib mendapat supervisi minimal ${mn} kali dalam ${esc(sem)}. “Terjadwal” menghitung putaran supervisi yang sudah ada di jadwal; “Terlaksana” menghitung laporan supervisi yang sudah diisi.</p>
+    ${S.guru.length? `<div class="scroll" style="margin-top:8px"><table style="min-width:420px"><tr><th>Nama Guru</th><th style="width:90px">Terjadwal</th><th style="width:90px">Terlaksana</th></tr>
+      ${pm.map(x=>`<tr><td>${esc(x.g.nama)}</td><td><span class="tag ${x.ok?"ok":"warn"}">${x.jadwal}/${mn}</span></td><td><span class="tag ${x.real>=mn?"ok":"info"}">${x.real}/${mn}</span></td></tr>`).join("")}</table></div>`:""}
+    ${semua.length && maxKe<mn? `<button class="btn block" style="margin-top:10px" data-act="jadwal-putaran">➕ Tambahkan Supervisi ke-${maxKe+1}${maxKe+1<mn?" s.d. ke-"+mn:""} otomatis</button>`:""}
+  </div>
+
+  <div class="row" style="margin:12px 0 4px;gap:6px">
+    ${chipKe("semua","Semua putaran")}${Array.from({length:jmlKe},(_,i)=>chipKe(i+1,"Supervisi ke-"+(i+1))).join("")}
+  </div>
+  <div class="row" style="margin:6px 0 4px;gap:6px">
+    ${chip("semua","Semua")}${chip("pra","Pra-Observasi")}${chip("obs","Observasi")}${chip("pasca","Pasca-Observasi")}${chip("tl","Tindak Lanjut")}
+  </div>
+
+  ${list.length? `<div class="card tight scroll"><table style="min-width:620px">
+    <tr><th style="width:34px">No.</th><th>Nama Guru</th><th>Jabatan/Kelas</th><th>Waktu Pelaksanaan</th><th>Keterangan</th></tr>
+    ${barisJadwal(list,true)}</table></div>
+    <p class="xsmall muted" style="margin:2px 4px 10px">Ketuk baris untuk mengubah status atau tanggal agenda.</p>
+    <button class="btn block" data-act="cetak-jadwal">🖨️ Cetak Jadwal ${esc(sem)}</button>`
+  : `<div class="card empty"><b>Belum ada jadwal untuk ${esc(sem)}</b>Tekan "Susun Otomatis" untuk membuat jadwal seluruh guru, atau "Tambah Agenda" untuk satu per satu.</div>`}
+
+  <div class="sec-title">ALUR SUPERVISI</div>
+  <div class="card">
+    ${TAHAP.map((x,i)=>`<div style="margin:${i?"12px":"0"} 0 0"><span class="tag ${x.warna}">${i+1}. ${esc(x.pendek)}</span>
+      <div class="small muted" style="margin-top:4px"><b style="color:var(--ink)">${esc(x.label)}</b><br>${esc(x.ket)}</div></div>`).join("")}
+  </div>`);
+}
+function viewJadwalEdit(){
+  const j = param? (S.jadwal.find(x=>x.id===param)||{}) :
+    {guruId:"",ke:1,tahap:"pra",semester:jdSemAktif(),tanggal:awalSemester(jdSemAktif(),S.settings.taAktif),jam:TAHAP[0].jam,ket:"",status:"Terjadwal"};
+  return layout(`<div class="card">
+    <h2 style="font-size:16px">${param?"Ubah Agenda Supervisi":"Tambah Agenda Supervisi"}</h2>
+    <label class="f"><span>Nama guru</span><select id="jd-guru"><option value="">— Pilih guru —</option>
+      ${S.guru.map(g=>`<option value="${g.id}" ${g.id===j.guruId?"selected":""}>${esc(g.nama)} — ${esc(g.tugas||"")}</option>`).join("")}</select></label>
+    <label class="f"><span>Supervisi ke-</span><select id="jd-ke">
+      ${Array.from({length:Math.max(minSup(),keOf(j),3)},(_,i)=>`<option value="${i+1}" ${(i+1)===keOf(j)?"selected":""}>Supervisi ke-${i+1}${(i+1)<=minSup()?" (wajib)":""}</option>`).join("")}</select></label>
+    <label class="f"><span>Tahap supervisi</span><select id="jd-tahapf">
+      ${TAHAP.map(x=>`<option value="${x.k}" ${x.k===j.tahap?"selected":""}>${esc(x.label)}</option>`).join("")}</select></label>
+    <label class="f"><span>Semester</span><select id="jd-semf">
+      ${S.settings.periode.map(p=>`<option ${p===j.semester?"selected":""}>${esc(p)}</option>`).join("")}</select></label>
+    <label class="f"><span>Tanggal pelaksanaan</span><input id="jd-tgl" type="date" value="${esc(j.tanggal||"")}"></label>
+    <label class="f"><span>Jam pelaksanaan</span><input id="jd-jam" value="${esc(j.jam||"")}" placeholder="07.30–09.00 WIB"></label>
+    <label class="f"><span>Status</span><select id="jd-status">
+      ${STATUS_JADWAL.map(x=>`<option ${x===(j.status||"Terjadwal")?"selected":""}>${x}</option>`).join("")}</select></label>
+    <label class="f"><span>Keterangan (opsional)</span><textarea id="jd-ket" placeholder="Kosongkan untuk memakai keterangan standar tahap">${esc(j.ket||"")}</textarea></label>
+    <div class="btnrow" style="margin-top:16px">
+      <button class="btn" data-act="goto" data-r="jadwal">Batal</button>
+      <button class="btn primary" data-act="jadwal-simpan" data-id="${param||""}">Simpan</button>
+    </div>
+    ${param?`<button class="btn danger block" style="margin-top:10px" data-act="jadwal-hapus" data-id="${param}">Hapus Agenda</button>`:""}
+  </div>`);
+}
+function viewJadwalGen(){
+  const sem=jdSemAktif(), ta=S.settings.taAktif;
+  return layout(`<div class="card">
+    <h2 style="font-size:16px">Susun Jadwal Otomatis</h2>
+    <p class="small muted" style="margin-top:6px">Membuat jadwal ${esc(sem)} TA ${esc(ta)} untuk ${S.guru.length} guru, minimal ${minSup()} putaran supervisi per guru: satu guru per hari kerja pada tiap tahap.
+      Pra-observasi dimulai pada tanggal di bawah, observasi dimulai 5 hari kerja setelah pra-observasi guru terakhir, dan pasca-observasi 1 hari kerja setelah observasi. Putaran supervisi berikutnya dimulai sesuai jarak minggu di bawah (terhitung dari awal putaran sebelumnya). Sesuaikan dengan kalender akademik dan hari libur sekolah setelahnya.</p>
+    <label class="f"><span>Tanggal mulai pra-observasi</span><input id="gn-mulai" type="date" value="${awalSemester(sem,ta)}"></label>
+    <label class="f"><span>Jumlah supervisi per guru (minimal ${minSup()})</span><input id="gn-jml" type="number" min="${minSup()}" max="6" value="${minSup()}"></label>
+    <label class="f"><span>Jarak antar supervisi (minggu)</span><input id="gn-jarak" type="number" min="1" max="20" value="${jarakSup()}"></label>
+    <label class="f"><span>Jam pra-observasi</span><input id="gn-jam1" value="${TAHAP[0].jam}"></label>
+    <label class="f"><span>Jam observasi pembelajaran</span><input id="gn-jam2" value="${TAHAP[1].jam}"></label>
+    <label class="f"><span>Jam pasca-observasi</span><input id="gn-jam3" value="${TAHAP[2].jam}"></label>
+    <div class="btnrow" style="margin-top:16px">
+      <button class="btn" data-act="goto" data-r="jadwal">Batal</button>
+      <button class="btn primary" data-act="jadwal-gen-ok">Buat Jadwal</button>
+    </div>
+  </div>`);
+}
+function buatPutaran(sem,ta,ke,mulai,jam){
+  const out=[]; if(!S.guru.length) return out;
+  let d=nextWork(mulai); const pra=[];
+  S.guru.forEach(()=>{ pra.push(d); d=addWork(d,1); });
+  let o=addWork(pra[pra.length-1],5); const obs=[];
+  S.guru.forEach(()=>{ obs.push(o); o=addWork(o,1); });
+  S.guru.forEach((g,i)=>{
+    const mk=(tahap,tgl,j)=>({id:uid("j"),guruId:g.id,semester:sem,ta,ke,tahap,tanggal:tgl,jam:j,ket:"",status:"Terjadwal"});
+    out.push(mk("pra",pra[i],jam[0]), mk("obs",obs[i],jam[1]), mk("pasca",addWork(obs[i],1),jam[2]));
+  });
+  return out;
+}
+/* Awal putaran berikutnya: sesuai jarak minggu dari awal putaran sebelumnya, tetapi tidak sebelum putaran sebelumnya selesai. */
+function mulaiPutaranBerikut(prev,jarak){
+  const t=prev.map(j=>j.tanggal).filter(Boolean).sort();
+  const a=addWork(t[0],jarak*5), b=addWork(t[t.length-1],5);
+  return a>b?a:b;
+}
+function buatJadwalOtomatis(sem,ta,mulai,jam,jumlah,jarak){
+  const out=[]; jumlah=Math.max(minSup(),parseInt(jumlah)||minSup()); jarak=Math.max(1,parseInt(jarak)||jarakSup());
+  for(let ke=1;ke<=jumlah;ke++){
+    const start = ke===1? mulai : mulaiPutaranBerikut(out.filter(j=>j.ke===ke-1),jarak);
+    out.push(...buatPutaran(sem,ta,ke,start,jam));
+  }
+  return out;
+}
+function cekAkhirSemester(list,sem,ta){
+  const akhir=akhirSemester(sem,ta);
+  return list.some(j=>(j.tanggal||"")>akhir);
+}
+function kopHTML(judul,alamat){
+  const t=S.settings;
+  if(t.kopGambar) return `<div class="kopimg"><img src="${t.kopGambar}" alt="Kop sekolah"><h2>${judul}</h2></div>`;
+  return `<div class="kop"><h2>${judul}</h2><div>${esc(t.sekolah)} — NPSN ${esc(t.npsn)}</div>${alamat?`<div style="font-size:11.5px">${esc(t.alamat)}</div>`:""}</div>`;
+}
+function jadwalHTML(){
+  const t=S.settings, sem=jdSemAktif(), list=jadwalSemester();
+  return `<div class="report">
+    ${kopHTML(`JADWAL SUPERVISI AKADEMIK<br>${esc(sem.toUpperCase())} TAHUN PELAJARAN ${esc(t.taAktif)}`,true)}
+    <table><tr><th style="width:5%">No.</th><th style="width:24%">Nama Guru</th><th style="width:17%">Jabatan/Kelas</th><th style="width:24%">Waktu Pelaksanaan</th><th>Keterangan</th></tr>
+      ${list.map((j,i)=>{ const g=S.guru.find(x=>x.id===j.guruId)||{}, T=tahapOf(j.tahap);
+        return `<tr><td style="text-align:center">${i+1}</td><td>${esc(g.nama||"-")}</td><td>${esc(g.tugas||"-")}${g.kelas?" / "+esc(g.kelas):""}</td>
+          <td>${esc(tglID(j.tanggal))}${j.jam?"<br>"+esc(j.jam):""}</td><td><b>Supervisi ke-${keOf(j)} · ${esc(T.pendek)}</b> (${esc(j.status||"Terjadwal")}) — ${esc(j.ket||T.ket)}</td></tr>`; }).join("")||`<tr><td colspan="5" style="text-align:center">Belum ada jadwal.</td></tr>`}
+    </table>
+    <div class="ttd"><div></div><div>${esc(t.tempatPengesahan)}, ${tglResmi(tglLokal())}<br>Kepala Sekolah<br><br><br><br><b>${esc(t.kepsek)}</b><br>NIP. ${esc(t.nipKepsek)}</div></div>
+  </div>`;
+}
+
+/* ============================ RUTE / STATE UI ============================ */
+let route="beranda", param=null, step=1, draft=null, adminOK=false, theme="system", aiPesan="";
+function go(r,p){ route=r; param=p||null; if(r==="supervisi"){ if(!draft||draft.id!==p) { draft = p? JSON.parse(JSON.stringify(S.sup.find(x=>x.id===p))) : kosongDraft(); step=1; } } window.scrollTo(0,0); render(); }
+function kosongDraft(){
+  return {id:uid("s"),guruId:"",tanggal:tglLokal(),semester:S.settings.periode[0]||"Semester 1",taAktif:S.settings.taAktif,
+    jenisDokumen:S.settings.jenisDokumen[0]||"Modul Ajar",judul:"",kelasFase:"",mapel:"",pendekatan:"",
+    supervisor:S.settings.supervisorDefault,
+    skorA:{},skorB:{},skorC:{},skorD:{},catA:{},catB:{},catC:{},catD:{},
+    catatanUmum:"",kekuatan:"",area:"",rekomendasi:"",
+    tl:{jenis:[],rekomendasi:"",target:"",status:"Belum"},
+    dibuat:new Date().toISOString(),diubah:new Date().toISOString()};
+}
+
+/* ============================ LAYOUT ============================ */
+function layout(inner){
+  const t=S.settings;
+  return `
+  <div class="top"><div class="top-row">
+    <div class="crest">SP</div>
+    <div class="ttl"><h1>Supervisi Perencanaan Pembelajaran</h1><div class="sub">${esc(t.sekolah)} • TA ${esc(t.taAktif)}${SES?" • "+esc(SES.nama||SES.user):""}</div></div>
+    <button class="iconbtn" data-act="sinkron" title="Sinkron Google Sheets" aria-label="Sinkron Google Sheets"><span class="dot ${sync}"></span></button>
+    <button class="iconbtn" data-act="goto" data-r="panduan" title="Dasar hukum" aria-label="Dasar hukum">${ico("book")}</button>
+    <button class="iconbtn" data-act="logout" title="Keluar" aria-label="Keluar">${ico("out")}</button>
+  </div></div>
+  ${inner}
+  <div class="nav"><div>
+    <button data-act="goto" data-r="beranda" ${route==="beranda"?'aria-current="page"':""}><span class="em">${ico("home")}</span>Beranda</button>
+    <button data-act="goto" data-r="guru" ${route==="guru"||route==="guru-edit"?'aria-current="page"':""}><span class="em">${ico("guru")}</span>Guru</button>
+    <button data-act="goto" data-r="jadwal" ${route==="jadwal"||route==="jadwal-edit"||route==="jadwal-gen"?'aria-current="page"':""}><span class="em">${ico("cal")}</span>Jadwal</button>
+    <button data-act="obs-baru" ${route==="supervisi"?'aria-current="page"':""}><span class="em">${ico("obs")}</span>Supervisi</button>
+    <button data-act="goto" data-r="riwayat" ${route==="riwayat"||route==="detail"?'aria-current="page"':""}><span class="em">${ico("riw")}</span>Riwayat</button>
+    <button data-act="goto" data-r="pengaturan" ${route==="pengaturan"?'aria-current="page"':""}><span class="em">${ico("set")}</span>Atur</button>
+  </div></div>`;
+}
+
+function ring(persen,warna){
+  const R=30,C=2*Math.PI*R, off=C-(Math.min(100,Math.max(0,persen))/100)*C;
+  const col = warna==="ok"?"var(--hijau)":warna==="warn"?"var(--amber)":warna==="bad"?"var(--biru)":"var(--merah)";
+  return `<svg width="76" height="76" viewBox="0 0 76 76">
+   <circle cx="38" cy="38" r="${R}" fill="none" stroke="var(--line)" stroke-width="8"/>
+   <circle cx="38" cy="38" r="${R}" fill="none" stroke="${col}" stroke-width="8" stroke-linecap="round"
+     stroke-dasharray="${C}" stroke-dashoffset="${off}" transform="rotate(-90 38 38)"/>
+  </svg>`;
+}
+
+/* ============================ BERANDA ============================ */
+function viewBeranda(){
+  const taSup = S.sup.filter(o=>o.taAktif===S.settings.taAktif);
+  const n = taSup.length;
+  const rata = n? Math.round(taSup.reduce((s,o)=>s+hitung(o).persen,0)/n*10)/10 : 0;
+  const kat = kategoriDari(rata);
+  const perKat = {};
+  taSup.forEach(o=>{ const k=hitung(o).kategori.label; perKat[k]=(perKat[k]||0)+1; });
+  const akan = (S.jadwal||[]).filter(j=>j.status!=="Selesai"&&(j.tanggal||"")>=tglLokal()).sort((a,b)=>(a.tanggal||"").localeCompare(b.tanggal||"")).slice(0,3);
+  const terbaru = S.sup.slice().sort((a,b)=> (b.diubah||"").localeCompare(a.diubah||"")).slice(0,5);
+  return layout(`<div id="app-inner">
+    <div class="card hero-card">
+      <div class="hero">
+        <div class="ring">${ring(rata,kat.warna)}<div style="text-align:center;margin-top:-58px;font-size:11px;color:var(--muted)"></div></div>
+        <div style="flex:1">
+          <div class="hero-num">${rata}%</div>
+          <div class="tag ${kat.warna}">${esc(kat.label)}</div>
+          <div class="small muted" style="margin-top:6px">Rata-rata hasil supervisi perencanaan pembelajaran TA ${esc(S.settings.taAktif)}</div>
+        </div>
+      </div>
+      <div class="stats" style="margin-top:14px">
+        <div class="stat"><b>${S.guru.length}</b><span>Guru binaan</span></div>
+        <div class="stat"><b>${n}</b><span>Supervisi TA ini</span></div>
+      </div>
+    </div>
+
+    ${Object.keys(perKat).length? `<div class="sec-title">SEBARAN KATEGORI</div><div class="card bars">
+      ${S.instrumen.kategori.map(k=>{ const c=perKat[k.label]||0; const pc = n? Math.round(c/n*100):0;
+        return `<div class="barrow"><div class="bl"><span>${esc(k.label)}</span><span class="muted">${c}</span></div>
+        <div class="bt"><i style="width:${pc}%;background:${k.warna==='ok'?'var(--hijau)':k.warna==='warn'?'var(--amber)':k.warna==='bad'?'var(--biru)':'var(--merah)'}"></i></div></div>`; }).join("")}
+    </div>` : ""}
+
+    <div class="sec-title">MENU</div>
+    <div class="grid">
+      <button class="tile" data-act="obs-baru"><span class="em">${ico("obs")}</span><b>Supervisi Baru</b><span>Nilai perencanaan pembelajaran</span></button>
+      <button class="tile" data-act="goto" data-r="jadwal"><span class="em">${ico("cal")}</span><b>Jadwal Supervisi</b><span>${(S.jadwal||[]).filter(j=>j.status!=="Selesai").length} agenda aktif</span></button>
+      <button class="tile" data-act="goto" data-r="guru"><span class="em">${ico("guru")}</span><b>Data Guru</b><span>${S.guru.length} guru binaan</span></button>
+      <button class="tile" data-act="goto" data-r="riwayat"><span class="em">${ico("riw")}</span><b>Riwayat</b><span>${S.sup.length} data tersimpan</span></button>
+      <button class="tile" data-act="cetak-rekap"><span class="em">${ico("print")}</span><b>Cetak Rekap</b><span>Rekap TA ${esc(S.settings.taAktif)}</span></button>
+      <button class="tile" data-act="goto" data-r="panduan"><span class="em">${ico("book")}</span><b>Dasar Hukum</b><span>Regulasi acuan</span></button>
+      <button class="tile" data-act="goto" data-r="pengaturan"><span class="em">${ico("set")}</span><b>Pengaturan</b><span>Sekolah & instrumen</span></button>
+    </div>
+
+    ${akan.length? `<div class="sec-title">JADWAL TERDEKAT</div>`+akan.map(j=>{ const g=S.guru.find(x=>x.id===j.guruId)||{}, T=tahapOf(j.tahap);
+      return `<div class="list-item" data-act="jadwal-edit" data-id="${j.id}" style="cursor:pointer"><div class="spread"><span class="t">${esc(g.nama||"-")}</span><span class="small muted">${tglPendek(j.tanggal)}</span></div>
+      <div class="tags"><span class="tag ${T.warna}">${esc(T.pendek)}</span><span class="tag">${esc(j.jam||"")}</span></div></div>`; }).join("") : ""}
+
+    ${terbaru.length? `<div class="sec-title">SUPERVISI TERBARU</div>` + terbaru.map(o=>itemSup(o)).join("")
+      : `<div class="card empty"><b>Belum ada data supervisi</b>Mulai dengan menekan "Supervisi Baru".</div>`}
+  </div>`);
+}
+function itemSup(o){
+  const g=S.guru.find(x=>x.id===o.guruId); const h=hitung(o);
+  return `<div class="list-item" data-act="detail" data-id="${o.id}" style="cursor:pointer">
+    <div class="spread"><span class="t">${esc(g?g.nama:"(guru terhapus)")}</span><span class="small muted">${tglPendek(o.tanggal)}</span></div>
+    <div class="small muted">${esc(o.jenisDokumen)} • ${esc(o.mapel||"-")} ${o.kelasFase?("• "+esc(o.kelasFase)):""}</div>
+    <div class="tags"><span class="tag ${h.kategori.warna}">${h.persen}% · ${esc(h.kategori.label)}</span><span class="tag">${esc(o.semester)}</span></div>
+  </div>`;
+}
+
+/* ============================ GURU ============================ */
+function viewGuru(){
+  return layout(`<div class="sec-title">DAFTAR GURU BINAAN</div>
+  ${S.guru.map(g=>{
+    const riw=S.sup.filter(o=>o.guruId===g.id);
+    const terakhir = riw.slice().sort((a,b)=>(b.tanggal||"").localeCompare(a.tanggal||""))[0];
+    return `<div class="list-item">
+      <div class="spread"><span class="t">${esc(g.nama)}</span>
+        <span class="row" style="gap:6px">
+          <button class="btn sm" data-act="guru-edit" data-id="${g.id}">Ubah</button>
+          <button class="btn sm danger" data-act="guru-hapus" data-id="${g.id}">Hapus</button>
+        </span></div>
+      <div class="small muted">${esc(g.tugas||"-")} ${g.kelas?("• "+esc(g.kelas)):""} ${g.mapel?("• "+esc(g.mapel)):""}</div>
+      <div class="tags">${terakhir? `<span class="tag info">Terakhir: ${tglPendek(terakhir.tanggal)}</span>` : `<span class="tag">Belum pernah disupervisi</span>`}
+      <span class="tag">${riw.length} riwayat</span></div>
+    </div>`; }).join("")}
+  <button class="btn primary block" style="margin-top:14px" data-act="guru-edit">+ Tambah Guru</button>
+  `);
+}
+function viewGuruEdit(){
+  const g = param? S.guru.find(x=>x.id===param) : {nama:"",nip:"",tugas:"",kelas:"",mapel:""};
+  return layout(`<div class="card">
+    <h2 style="font-size:16px">${param?"Ubah Data Guru":"Tambah Guru"}</h2>
+    <label class="f"><span>Nama lengkap & gelar</span><input id="g-nama" value="${esc(g.nama)}"></label>
+    <label class="f"><span>NIP (opsional)</span><input id="g-nip" value="${esc(g.nip)}"></label>
+    <label class="f"><span>Tugas mengajar</span><input id="g-tugas" value="${esc(g.tugas)}" placeholder="Guru Kelas 1 / Guru PAI / dst."></label>
+    <label class="f"><span>Kelas / Fase</span><input id="g-kelas" value="${esc(g.kelas)}" placeholder="1 / Fase A"></label>
+    <label class="f"><span>Mata pelajaran</span><input id="g-mapel" value="${esc(g.mapel)}"></label>
+    <div class="btnrow" style="margin-top:16px">
+      <button class="btn" data-act="goto" data-r="guru">Batal</button>
+      <button class="btn primary" data-act="guru-simpan" data-id="${param||""}">Simpan</button>
+    </div>
+  </div>`);
+}
+
+/* ============================ PANDUAN / REGULASI ============================ */
+function viewPanduan(){
+  return layout(`<div class="sec-title">DASAR HUKUM SUPERVISI AKADEMIK PERENCANAAN PEMBELAJARAN</div>
+  <div class="card">
+    <p class="small">Instrumen pada aplikasi ini disusun dengan mengacu pada peraturan berikut. Satuan pendidikan dapat menyesuaikan lebih lanjut dengan petunjuk teknis dinas pendidikan setempat.</p>
+    ${REGULASI.map(r=>`<div style="margin:12px 0"><b class="small">${esc(r.n)}</b><div class="small muted">${esc(r.d)}</div></div>`).join("<hr>")}
+  </div>
+  <div class="card">
+    <b class="small">Siklus supervisi pada menu Jadwal</b>
+    <p class="small" style="margin-top:8px">Jadwal disusun dengan siklus supervisi akademik klinis: (1) Pra-Observasi sebagai supervisi perencanaan, yaitu telaah modul ajar/RPM dan kesepakatan fokus; (2) Observasi sebagai supervisi pelaksanaan pembelajaran di kelas; (3) Pasca-Observasi berupa refleksi dan umpan balik; (4) Tindak Lanjut berupa pembinaan. Setiap guru disupervisi minimal 2 kali dalam 1 semester (jumlah dan jarak antar supervisi dapat diatur di Pengaturan). Periksa kembali petunjuk teknis dinas pendidikan setempat dan peraturan Kemendikdasmen terbaru bila ada penyesuaian.</p>
+  </div>
+  <div class="card">
+    <b class="small">Struktur penilaian pada aplikasi ini</b>
+    <p class="small" style="margin-top:8px">Bagian A menilai kelengkapan administratif dokumen sesuai Standar Proses. Bagian B menilai kualitas rumusan dan tahapan kegiatan (Memahami–Mengaplikasi–Merefleksi) sebagaimana pendekatan Pembelajaran Mendalam. Bagian C menilai tiga prinsip Pembelajaran Mendalam: Berkesadaran, Bermakna, dan Menggembirakan. Bagian D menilai keberpihakan rencana pembelajaran pada keberagaman murid (diferensiasi).</p>
+  </div>`);
+}
+
+/* ============================ WIZARD SUPERVISI ============================ */
+const STEP_JUDUL = ["Data Supervisi","Kelengkapan Administratif","Kualitas & Tahapan","Prinsip & Keberpihakan","Catatan & Tindak Lanjut","Ringkasan"];
+function steps(){
+  return `<div class="steps"><div class="lbl"><span>Langkah ${step} dari 6</span><span>${STEP_JUDUL[step-1]}</span></div>
+  <div class="bar"><i style="width:${step/6*100}%"></i></div></div>`;
+}
+function optRow(k,x,val,idx){
+  const skala=S.instrumen.skala;
+  return `<div class="ind">
+    <div class="no">${BAGIAN_LABEL[k].split(" — ")[0]} · ${idx+1}</div>
+    <div class="q">${esc(x.teks)}</div>
+    <div class="ex">Contoh acuan: ${esc(contohDari(x))}</div>
+    <div class="scale">
+      ${skala.map(s=>`<label class="opt"><input type="radio" name="sk-${x.id}" value="${s.n}" ${num(val&&val[x.id])===s.n?"checked":""} data-act-input="skor" data-k="${k}" data-id="${x.id}">
+        <span>${esc(s.l)}</span></label>`).join("")}
+    </div>
+    <div class="note row" style="gap:8px">
+      <input placeholder="Catatan (opsional)" data-act-input="catatan" data-k="${k}" data-id="${x.id}" value="${esc((draft[catKeyOf(k)]&&draft[catKeyOf(k)][x.id])||"")}">
+      <button class="btn sm" data-act="cat-auto" data-kind="${k}" data-id="${x.id}" title="Isi otomatis dari skor">✨</button>
+    </div>
+  </div>`;
+}
+function viewSupervisi(){
+  if(!S.guru.length) return layout(`<div class="card empty"><b>Belum ada data guru</b>Tambahkan guru terlebih dahulu sebelum melakukan supervisi.
+    <div style="margin-top:12px"><button class="btn primary" data-act="goto" data-r="guru">Tambah Guru</button></div></div>`);
+  let body="";
+  if(step===1){
+    body = `<div class="card">
+      <label class="f"><span>Guru</span><select id="d-guru">${S.guru.map(g=>`<option value="${g.id}" ${draft.guruId===g.id?"selected":""}>${esc(g.nama)}</option>`).join("")}</select></label>
+      <label class="f"><span>Tanggal supervisi</span><input type="date" id="d-tanggal" value="${esc(draft.tanggal)}"></label>
+      <div class="row" style="margin-top:12px;gap:10px">
+        <label class="f" style="flex:1;margin-top:0"><span>Semester</span><select id="d-semester">${S.settings.periode.map(p=>`<option ${draft.semester===p?"selected":""}>${esc(p)}</option>`).join("")}</select></label>
+        <label class="f" style="flex:1;margin-top:0"><span>Tahun ajaran</span><select id="d-ta">${S.settings.daftarTA.map(t=>`<option ${draft.taAktif===t?"selected":""}>${esc(t)}</option>`).join("")}</select></label>
+      </div>
+      <label class="f"><span>Jenis dokumen</span><select id="d-jenis">${S.settings.jenisDokumen.map(j=>`<option ${draft.jenisDokumen===j?"selected":""}>${esc(j)}</option>`).join("")}</select></label>
+      <div class="row" style="margin-top:12px;gap:10px">
+        <label class="f" style="flex:1;margin-top:0"><span>Kelas/Fase</span><input id="d-kelas" value="${esc(draft.kelasFase)}"></label>
+        <label class="f" style="flex:1;margin-top:0"><span>Mata pelajaran</span><input id="d-mapel" value="${esc(draft.mapel)}"></label>
+      </div>
+      <label class="f"><span>Judul materi / topik</span><input id="d-judul" value="${esc(draft.judul)}"></label>
+      <label class="f"><span>Model/pendekatan pembelajaran (opsional)</span><input id="d-pendekatan" value="${esc(draft.pendekatan)}" placeholder="mis. PjBL, Discovery Learning, Diskusi kelompok"></label>
+      <label class="f"><span>Supervisor</span><input id="d-supervisor" value="${esc(draft.supervisor)}"></label>
+    </div>`;
+  } else if(step===2){
+    body = `<div class="card tight"><b class="small">${BAGIAN_LABEL.bagianA}</b><div class="xsmall muted">Berdasarkan Permendikbud No. 22/2016 tentang Standar Proses.</div></div>
+    ${aktifBagian("bagianA").map((x,i)=>optRow("bagianA",x,draft.skorA,i)).join("")}
+    <button class="btn block sm" data-act="cat-auto-semua" data-kind="bagianA" style="margin-top:4px">✨ Isi semua catatan bagian ini otomatis</button>`;
+  } else if(step===3){
+    body = `<div class="card tight"><b class="small">${BAGIAN_LABEL.bagianB}</b><div class="xsmall muted">Menilai kualitas rumusan komponen inti dan tahapan Memahami–Mengaplikasi–Merefleksi.</div></div>
+    ${aktifBagian("bagianB").map((x,i)=>optRow("bagianB",x,draft.skorB,i)).join("")}
+    <button class="btn block sm" data-act="cat-auto-semua" data-kind="bagianB" style="margin-top:4px">✨ Isi semua catatan bagian ini otomatis</button>`;
+  } else if(step===4){
+    body = `<div class="card tight"><b class="small">${BAGIAN_LABEL.bagianC}</b><div class="xsmall muted">Berdasarkan Permendikdasmen No. 13/2025 tentang Pembelajaran Mendalam.</div></div>
+    ${aktifBagian("bagianC").map((x,i)=>optRow("bagianC",x,draft.skorC,i)).join("")}
+    <button class="btn block sm" data-act="cat-auto-semua" data-kind="bagianC" style="margin-top:4px">✨ Isi semua catatan bagian ini otomatis</button>
+    <div class="card tight" style="margin-top:18px"><b class="small">${BAGIAN_LABEL.bagianD}</b><div class="xsmall muted">Keberpihakan rencana pembelajaran pada keberagaman murid.</div></div>
+    ${aktifBagian("bagianD").map((x,i)=>optRow("bagianD",x,draft.skorD,i)).join("")}
+    <button class="btn block sm" data-act="cat-auto-semua" data-kind="bagianD" style="margin-top:4px">✨ Isi semua catatan bagian ini otomatis</button>`;
+  } else if(step===5){
+    const t=S.settings;
+    body = `<div class="card">
+      <div class="spread"><b class="small">Catatan Hasil Supervisi</b><button class="btn sm" data-act="saran">✨ Susun otomatis</button></div>
+      <label class="f"><span>Catatan umum</span><textarea id="d-catumum">${esc(draft.catatanUmum)}</textarea></label>
+      <label class="f"><span>Kekuatan</span><textarea id="d-kekuatan">${esc(draft.kekuatan)}</textarea></label>
+      <label class="f"><span>Area pengembangan</span><textarea id="d-area">${esc(draft.area)}</textarea></label>
+      <label class="f"><span>Rekomendasi</span><textarea id="d-rekom">${esc(draft.rekomendasi)}</textarea></label>
+    </div>
+    <div class="card">
+      <div class="spread"><b class="small">Rencana Tindak Lanjut</b><button class="btn sm" data-act="tl-auto">✨ Susun otomatis</button></div>
+      <label class="f"><span>Jenis tindak lanjut</span></label>
+      <div class="scale" style="grid-template-columns:1fr 1fr">
+        ${t.jenisTL.map(j=>`<label class="opt"><input type="checkbox" data-act-input="tl-jenis" value="${esc(j)}" ${draft.tl.jenis.includes(j)?"checked":""}><span>${esc(j)}</span></label>`).join("")}
+      </div>
+      <label class="f"><span>Rekomendasi tindak lanjut</span><textarea id="d-tlrekom">${esc(draft.tl.rekomendasi)}</textarea></label>
+      <div class="row" style="margin-top:12px;gap:10px">
+        <label class="f" style="flex:1;margin-top:0"><span>Target waktu</span><input id="d-tltarget" value="${esc(draft.tl.target)}" placeholder="mis. 2 minggu"></label>
+        <label class="f" style="flex:1;margin-top:0"><span>Status</span><select id="d-tlstatus">${t.statusTL.map(s=>`<option ${draft.tl.status===s?"selected":""}>${esc(s)}</option>`).join("")}</select></label>
+      </div>
+    </div>`;
+  } else if(step===6){
+    body = viewRingkasan(draft,true);
+  }
+  return layout(`${steps()}${body}
+    <div class="btnrow" style="margin-top:16px">
+      ${step>1? `<button class="btn" data-act="step-prev">Kembali</button>`:`<button class="btn" data-act="goto" data-r="beranda">Batal</button>`}
+      ${step<6? `<button class="btn primary" data-act="step-next">Lanjut</button>` : `<button class="btn primary" data-act="goto" data-r="riwayat">Selesai</button>`}
+    </div>`);
+}
+function viewRingkasan(o,inWizard){
+  const g=S.guru.find(x=>x.id===o.guruId); const h=hitung(o);
+  return `<div class="card">
+    <div class="hero">
+      <div class="ring">${ring(h.persen,h.kategori.warna)}</div>
+      <div style="flex:1"><div class="hero-num">${h.persen}%</div><div class="tag ${h.kategori.warna}">${esc(h.kategori.label)}</div></div>
+    </div>
+    <hr>
+    <table>${BAGIAN_KEYS.map(k=>`<tr><td>${BAGIAN_LABEL[k]}</td><td style="text-align:right">${h.per[k].skor}/${h.per[k].maks} (${h.per[k].persen}%)</td></tr>`).join("")}</table>
+  </div>
+  <div class="card">
+    <div class="spread"><span class="t">${esc(g?g.nama:"-")}</span><span class="small muted">${tglPendek(o.tanggal)}</span></div>
+    <div class="small muted">${esc(o.jenisDokumen)} • ${esc(o.mapel||"-")} ${o.kelasFase?("• "+esc(o.kelasFase)):""}</div>
+    ${o.judul? `<div class="small" style="margin-top:6px"><b>Topik:</b> ${esc(o.judul)}</div>`:""}
+    ${o.catatanUmum? `<div class="small" style="margin-top:10px"><b>Catatan umum:</b> ${esc(o.catatanUmum)}</div>`:""}
+    ${o.rekomendasi? `<div class="small" style="margin-top:6px"><b>Rekomendasi:</b> ${esc(o.rekomendasi)}</div>`:""}
+    ${o.tl && o.tl.jenis.length? `<div class="small" style="margin-top:6px"><b>Tindak lanjut:</b> ${esc(o.tl.jenis.join(", "))} (${esc(o.tl.target||"-")})</div>`:""}
+  </div>${inWizard? "" : `<div class="btnrow">
+    <button class="btn" data-act="obs-edit" data-id="${o.id}">Ubah</button>
+    <button class="btn primary" data-act="cetak" data-id="${o.id}">🖨️ Cetak Laporan</button>
+  </div>`}`;
+}
+
+/* ============================ RIWAYAT / DETAIL ============================ */
+function viewRiwayat(){
+  const list = S.sup.slice().sort((a,b)=>(b.tanggal||"").localeCompare(a.tanggal||""));
+  return layout(`<div class="sec-title">RIWAYAT SUPERVISI (${list.length})</div>
+  ${list.length? list.map(o=>itemSup(o)).join("") : `<div class="card empty"><b>Belum ada riwayat</b>Data supervisi yang tersimpan akan tampil di sini.</div>`}`);
+}
+function viewDetail(){
+  const o=S.sup.find(x=>x.id===param);
+  if(!o) return layout(`<div class="card empty"><b>Data tidak ditemukan</b></div>`);
+  return layout(`<div class="sec-title">DETAIL SUPERVISI</div>
+  ${viewRingkasan(o,false)}
+  <div class="card">
+    <b class="small">Rincian Skor per Indikator</b>
+    ${BAGIAN_KEYS.map(k=>`<div style="margin-top:10px"><div class="xsmall muted" style="font-weight:700">${BAGIAN_LABEL[k]}</div>
+      ${aktifBagian(k).map(x=>{ const s=num(o[skorKeyOf(k)]&&o[skorKeyOf(k)][x.id]); const c=(o[catKeyOf(k)]&&o[catKeyOf(k)][x.id])||"";
+        return `<div class="small" style="margin:6px 0;padding-bottom:6px;border-bottom:1px solid var(--line)"><b>${s||"-"}</b> — ${esc(x.teks)}${c?`<div class="muted">${esc(c)}</div>`:""}</div>`; }).join("")}
+    </div>`).join("")}
+  </div>
+  <div class="btnrow">
+    <button class="btn danger" data-act="obs-hapus" data-id="${o.id}">Hapus</button>
+    <button class="btn primary" data-act="cetak" data-id="${o.id}">🖨️ Cetak</button>
+  </div>`);
+}
+
+/* ============================ PENGATURAN ============================ */
+function viewPengaturan(){
+  if(!adminOK){
+    return layout(`<div class="card">
+      <h2 style="font-size:16px">Pengaturan</h2>
+      <p class="small muted">Masukkan PIN admin untuk mengubah identitas sekolah dan instrumen supervisi.</p>
+      <label class="f"><span>PIN</span><input id="pin" type="password" inputmode="numeric"></label>
+      <button class="btn primary block" style="margin-top:12px" data-act="pin-cek">Masuk</button>
+    </div>`);
+  }
+  const t=S.settings, I=S.instrumen;
+  return layout(`
+  <div class="sec-title">IDENTITAS SEKOLAH</div>
+  <div class="card">
+    <label class="f"><span>Nama sekolah</span><input data-set="sekolah" value="${esc(t.sekolah)}"></label>
+    <label class="f"><span>NPSN</span><input data-set="npsn" value="${esc(t.npsn)}"></label>
+    <label class="f"><span>Alamat</span><textarea data-set="alamat">${esc(t.alamat)}</textarea></label>
+    <label class="f"><span>Kepala sekolah</span><input data-set="kepsek" value="${esc(t.kepsek)}"></label>
+    <label class="f"><span>NIP kepala sekolah</span><input data-set="nipKepsek" value="${esc(t.nipKepsek)}"></label>
+    <label class="f"><span>Supervisor default</span><input data-set="supervisorDefault" value="${esc(t.supervisorDefault)}"></label>
+    <label class="f"><span>Tahun ajaran aktif</span><input data-set="taAktif" value="${esc(t.taAktif)}"></label>
+    <label class="f"><span>Daftar tahun ajaran (pisahkan koma)</span><input data-set-list="daftarTA" value="${esc(t.daftarTA.join(", "))}"></label>
+    <label class="f"><span>Tempat pengesahan</span><input data-set="tempatPengesahan" value="${esc(t.tempatPengesahan)}"></label>
+  </div>
+
+  <div class="sec-title">KOP SURAT DOKUMEN CETAK</div>
+  <div class="card">
+    <p class="small muted">Unggah gambar kop sekolah (JPG/PNG) yang akan muncul di bagian atas laporan supervisi, rekapitulasi, dan jadwal. Disarankan gambar lebar dengan rasio sekitar 6:1 sampai 8:1 (mis. 1400×200 px). Gambar otomatis diperkecil agar ringan. Jika belum ada kop gambar, dipakai kop teks dari identitas sekolah.</p>
+    <div class="kop-prev">${t.kopGambar? `<img src="${t.kopGambar}" alt="Pratinjau kop">` : `<span class="small muted">Belum ada kop gambar — mencetak dengan kop teks.</span>`}</div>
+    <input id="kop-file" type="file" accept="image/*" style="display:none">
+    <div class="btnrow">
+      <button class="btn primary" data-act="kop-pilih">📤 ${t.kopGambar?"Ganti Kop":"Unggah Kop"}</button>
+      ${t.kopGambar? `<button class="btn danger" data-act="kop-hapus">Hapus Kop</button>`:""}
+    </div>
+  </div>
+
+  <div class="sec-title">KETENTUAN SUPERVISI</div>
+  <div class="card">
+    <label class="f"><span>Minimal supervisi per guru dalam 1 semester (kali)</span><input data-set="minSupervisi" type="number" min="1" max="6" inputmode="numeric" value="${esc(t.minSupervisi)}"></label>
+    <label class="f"><span>Jarak antar supervisi (minggu)</span><input data-set="jarakSupervisi" type="number" min="1" max="20" inputmode="numeric" value="${esc(t.jarakSupervisi)}"></label>
+  </div>
+
+  <div class="sec-title">SKALA PENILAIAN</div>
+  <div class="card">
+    ${I.skala.map((s,i)=>`<div class="row" style="margin-top:${i?8:0}px"><input style="width:70px" data-skala="${i}.n" value="${s.n}" inputmode="numeric"><input style="flex:1" data-skala="${i}.l" value="${esc(s.l)}"></div>`).join("")}
+  </div>
+
+  <div class="sec-title">KATEGORI HASIL</div>
+  <div class="card">
+    ${I.kategori.map((k,i)=>`<div class="row" style="margin-top:${i?8:0}px">
+      <input style="width:70px" data-kat="${i}.min" value="${k.min}" inputmode="numeric">
+      <input style="flex:1" data-kat="${i}.label" value="${esc(k.label)}">
+      <button class="btn sm danger" data-act="kat-hapus" data-i="${i}">✕</button></div>`).join("")}
+    <button class="btn sm block" style="margin-top:10px" data-act="kat-tambah">+ Tambah kategori</button>
+  </div>
+
+  <div class="sec-title">INDIKATOR INSTRUMEN</div>
+  ${BAGIAN_KEYS.map(k=>`<div class="card">
+    <b class="small">${BAGIAN_LABEL[k]}</b>
+    ${I[k].map((x,i)=>`<div class="row" style="margin-top:10px;align-items:flex-start">
+      <label class="opt" style="flex:none;margin-top:6px"><input type="checkbox" data-ind-aktif="${k}.${i}" ${x.aktif?"checked":""}><span style="min-height:30px;padding:6px">✓</span></label>
+      <textarea style="flex:1" data-ind="${k}.${i}">${esc(x.teks)}</textarea>
+      <button class="btn sm danger" data-act="ind-hapus" data-k="${k}" data-i="${i}">✕</button>
+    </div>`).join("")}
+    <button class="btn sm block" style="margin-top:10px" data-act="ind-tambah" data-k="${k}">+ Tambah indikator</button>
+  </div>`).join("")}
+
+  <div class="btnrow" style="margin:16px 0"><button class="btn primary block" data-act="set-simpan">Simpan Pengaturan</button></div>
+
+  <div class="sec-title">UBAH PIN ADMIN</div>
+  <div class="card"><label class="f"><span>PIN baru (angka)</span><input data-set="pinAdmin" value="${esc(t.pinAdmin)}" inputmode="numeric"></label></div>
+
+  <div class="sec-title">CADANGAN DATA</div>
+  <div class="card">
+    <div class="btnrow"><button class="btn" data-act="backup">⬇️ Unduh Cadangan</button><button class="btn" data-act="restore">⬆️ Pulihkan</button></div>
+    <button class="btn danger block" style="margin-top:10px" data-act="reset">Kembalikan ke Data Awal</button>
+  </div>
+  `);
+}
+
+/* ============================ CETAK ============================ */
+function laporanHTML(o){
+  const t=S.settings, g=S.guru.find(x=>x.id===o.guruId)||{}, h=hitung(o);
+  const baris = k => aktifBagian(k).map(x=>{
+    const s=num(o[skorKeyOf(k)]&&o[skorKeyOf(k)][x.id]); const c=(o[catKeyOf(k)]&&o[catKeyOf(k)][x.id])||"";
+    return `<tr><td>${esc(x.teks)}</td><td style="text-align:center">${s||"-"}</td><td>${esc(c)}</td></tr>`; }).join("");
+  return `<div class="report">
+    ${kopHTML(`LAPORAN HASIL SUPERVISI AKADEMIK<br>PERENCANAAN PEMBELAJARAN`,true)}
+    <table style="margin-bottom:10px">
+      <tr><td style="width:34%"><b>Nama Guru</b></td><td>${esc(g.nama||"-")}</td><td style="width:34%"><b>Tanggal</b></td><td>${tglResmi(o.tanggal)}</td></tr>
+      <tr><td><b>Tugas Mengajar</b></td><td>${esc(g.tugas||"-")}</td><td><b>Semester / TA</b></td><td>${esc(o.semester)} / ${esc(o.taAktif)}</td></tr>
+      <tr><td><b>Kelas / Fase</b></td><td>${esc(o.kelasFase||"-")}</td><td><b>Mata Pelajaran</b></td><td>${esc(o.mapel||"-")}</td></tr>
+      <tr><td><b>Jenis Dokumen</b></td><td>${esc(o.jenisDokumen)}</td><td><b>Topik/Materi</b></td><td>${esc(o.judul||"-")}</td></tr>
+      <tr><td><b>Supervisor</b></td><td colspan="3">${esc(o.supervisor)}</td></tr>
+    </table>
+    ${BAGIAN_KEYS.map(k=>`<div style="font-weight:700;margin:10px 0 4px">${BAGIAN_LABEL[k]}</div>
+      <table><tr><th style="width:64%">Indikator</th><th style="width:12%">Skor</th><th>Catatan</th></tr>${baris(k)}
+      <tr><td><b>Jumlah</b></td><td style="text-align:center"><b>${h.per[k].skor}/${h.per[k].maks}</b></td><td>${h.per[k].persen}%</td></tr></table>`).join("")}
+    <table style="margin-top:8px"><tr><td><b>SKOR TOTAL</b></td><td style="text-align:center"><b>${h.total}/${h.maxTot}</b></td><td><b>${h.persen}% — ${esc(h.kategori.label)}</b></td></tr></table>
+    <div style="margin-top:10px"><b>Catatan Umum:</b> ${esc(o.catatanUmum||"-")}</div>
+    <div style="margin-top:6px"><b>Kekuatan:</b> ${esc(o.kekuatan||"-")}</div>
+    <div style="margin-top:6px"><b>Area Pengembangan:</b> ${esc(o.area||"-")}</div>
+    <div style="margin-top:6px"><b>Rekomendasi:</b> ${esc(o.rekomendasi||"-")}</div>
+    <div style="margin-top:6px"><b>Rencana Tindak Lanjut:</b> ${esc((o.tl&&o.tl.jenis||[]).join(", ")||"-")} — ${esc(o.tl&&o.tl.rekomendasi||"-")} (Target: ${esc(o.tl&&o.tl.target||"-")}, Status: ${esc(o.tl&&o.tl.status||"-")})</div>
+    <div class="ttd">
+      <div>Guru yang disupervisi<br><br><br><br><b>${esc(g.nama||"-")}</b></div>
+      <div>${esc(t.tempatPengesahan)}, ${tglResmi(o.tanggal)}<br>Kepala Sekolah<br><br><br><br><b>${esc(t.kepsek)}</b><br>NIP. ${esc(t.nipKepsek)}</div>
+    </div>
+  </div>`;
+}
+function rekapHTML(){
+  const t=S.settings; const taSup=S.sup.filter(o=>o.taAktif===t.taAktif);
+  const rows = S.guru.map(g=>{
+    const riw=taSup.filter(o=>o.guruId===g.id).sort((a,b)=>(b.tanggal||"").localeCompare(a.tanggal||""));
+    const o=riw[0]; const h=o?hitung(o):null;
+    return `<tr><td>${esc(g.nama)}</td><td>${esc(g.tugas||"-")}</td><td>${o?tglResmi(o.tanggal):"-"}</td><td>${o?esc(o.jenisDokumen):"-"}</td>
+      <td style="text-align:center">${h?h.persen+"%":"-"}</td><td>${h?esc(h.kategori.label):"Belum disupervisi"}</td></tr>`; }).join("");
+  return `<div class="report">
+    ${kopHTML(`REKAPITULASI HASIL SUPERVISI AKADEMIK<br>PERENCANAAN PEMBELAJARAN — TA ${esc(t.taAktif)}`,false)}
+    <table><tr><th>Nama Guru</th><th>Tugas</th><th>Tanggal Terakhir</th><th>Dokumen</th><th>Skor</th><th>Kategori</th></tr>${rows}</table>
+    <div class="ttd"><div></div><div>${esc(t.tempatPengesahan)}, ${tglResmi(tglLokal())}<br>Kepala Sekolah<br><br><br><br><b>${esc(t.kepsek)}</b><br>NIP. ${esc(t.nipKepsek)}</div></div>
+  </div>`;
+}
+
+/* ============================ RENDER ============================ */
+function render(){
+  if(!SES){ $("#app").innerHTML=viewLogin(); return; }
+  let html="";
+  if(route==="beranda") html=viewBeranda();
+  else if(route==="guru") html=viewGuru();
+  else if(route==="guru-edit") html=viewGuruEdit();
+  else if(route==="supervisi") html=viewSupervisi();
+  else if(route==="riwayat") html=viewRiwayat();
+  else if(route==="detail") html=viewDetail();
+  else if(route==="pengaturan") html=viewPengaturan();
+  else if(route==="panduan") html=viewPanduan();
+  else if(route==="jadwal") html=viewJadwal();
+  else if(route==="jadwal-edit") html=viewJadwalEdit();
+  else if(route==="jadwal-gen") html=viewJadwalGen();
+  else html=viewBeranda();
+  $("#app").innerHTML = html;
+}
+
+/* ============================ EVENTS ============================ */
+document.addEventListener("input", e=>{
+  const el=e.target, k=el.dataset.actInput;
+  if(k==="skor"){ const kk=el.dataset.k, id=el.dataset.id; draft[skorKeyOf(kk)]=draft[skorKeyOf(kk)]||{}; draft[skorKeyOf(kk)][id]=num(el.value); }
+  else if(k==="catatan"){ const kk=el.dataset.k, id=el.dataset.id; draft[catKeyOf(kk)]=draft[catKeyOf(kk)]||{}; draft[catKeyOf(kk)][id]=el.value; }
+  else if(k==="tl-jenis"){ const v=el.value; draft.tl.jenis = draft.tl.jenis||[];
+    if(el.checked){ if(!draft.tl.jenis.includes(v)) draft.tl.jenis.push(v); } else { draft.tl.jenis=draft.tl.jenis.filter(x=>x!==v); } }
+});
+document.addEventListener("change", e=>{
+  const el=e.target;
+  if(!draft) return;
+  const map={"d-guru":"guruId","d-tanggal":"tanggal","d-semester":"semester","d-ta":"taAktif","d-jenis":"jenisDokumen",
+    "d-kelas":"kelasFase","d-mapel":"mapel","d-judul":"judul","d-pendekatan":"pendekatan","d-supervisor":"supervisor",
+    "d-catumum":"catatanUmum","d-kekuatan":"kekuatan","d-area":"area","d-rekom":"rekomendasi"};
+  if(map[el.id]) draft[map[el.id]]=el.value;
+  if(el.id==="d-tlrekom") draft.tl.rekomendasi=el.value;
+  if(el.id==="d-tltarget") draft.tl.target=el.value;
+  if(el.id==="d-tlstatus") draft.tl.status=el.value;
+});
+
+function prosesKop(file){
+  if(!file) return;
+  if(!/^image\//.test(file.type)){ toast("Berkas harus berupa gambar (JPG/PNG)"); return; }
+  if(file.size>8*1024*1024){ toast("Ukuran gambar maksimal 8 MB"); return; }
+  const fr=new FileReader();
+  fr.onerror=()=>toast("Gambar tidak dapat dibaca");
+  fr.onload=()=>{ const img=new Image();
+    img.onerror=()=>toast("Gambar tidak dapat dibuka");
+    img.onload=async()=>{
+      const nw=img.naturalWidth||1400, nh=img.naturalHeight||200; let out="";
+      for(const w0 of [1400,1100,800]){ const W=Math.min(w0,nw), H=Math.max(1,Math.round(nh*W/nw));
+        const c=document.createElement("canvas"); c.width=W; c.height=H; const x=c.getContext("2d");
+        x.fillStyle="#fff"; x.fillRect(0,0,W,H); x.drawImage(img,0,0,W,H);
+        let ok=false; for(const q of [.9,.8,.7,.6]){ out=c.toDataURL("image/jpeg",q); if(out.length<=300000){ ok=true; break; } }
+        if(ok) break; }
+      simpanPengaturan(true); S.settings.kopGambar=out; saveLocal(); render();
+      await persist("settings"); toast("Kop tersimpan"); };
+    img.src=fr.result; };
+  fr.readAsDataURL(file);
+}
+document.addEventListener("change", e=>{
+  if(e.target.id==="kop-file"){ prosesKop(e.target.files&&e.target.files[0]); e.target.value=""; return; }
+  if(e.target.id==="jd-sem"){ jdSem=e.target.value; render(); }
+  if(e.target.id==="jd-tahapf"){ const T=tahapOf(e.target.value), j=$("#jd-jam"); if(j&&!j.value.trim()) j.value=T.jam; }
+});
+document.addEventListener("click", async e=>{
+  const b=e.target.closest("[data-act]"); if(!b) return;
+  const act=b.dataset.act, id=b.dataset.id;
+
+  if(act==="login"){ await masuk(); return; }
+  if(act==="logout"){ keluar(); return; }
+  if(act==="sinkron"){ if(!sheetsUrl()){ toast("Google Sheets belum terhubung. Atur URL di layar login."); return; } await initData(); if(sync==="ok") toast("Data tersinkron"); return; }
+  if(act==="url-simpan"){ const v=($("#lg-url").value||"").trim();
+    if(v&&!/^https:\/\/script\.google\.com\/macros\/s\/.+\/exec$/.test(v)){ lgErr="URL tidak valid. Gunakan URL penerapan berakhiran /exec."; render(); return; }
+    try{ localStorage.setItem("supervisiapp.url",v); }catch(err){} lgErr=""; toast(v?"URL tersimpan":"Mode lokal aktif"); render(); return; }
+  if(act==="goto"){ go(b.dataset.r, null); return; }
+  if(act==="detail"){ go("detail", id); return; }
+
+  if(act==="jd-tahap"){ jdTahap=b.dataset.k; render(); return; }
+  if(act==="jd-ke"){ jdKe=b.dataset.k; render(); return; }
+  if(act==="kop-pilih"){ const f=$("#kop-file"); if(f) f.click(); return; }
+  if(act==="kop-hapus"){ if(!confirm("Hapus kop gambar? Dokumen cetak akan memakai kop teks.")) return;
+    simpanPengaturan(true); S.settings.kopGambar=""; saveLocal(); render(); await persist("settings"); toast("Kop dihapus"); return; }
+  if(act==="jadwal-putaran"){
+    const sem=jdSemAktif(), ta=S.settings.taAktif, semua=jadwalSemester(), mn=minSup(), jarak=jarakSup();
+    if(!semua.length) return;
+    const maxKe=Math.max(...semua.map(keOf));
+    if(maxKe>=mn){ toast("Jumlah supervisi sudah memenuhi minimal"); return; }
+    const jam=[TAHAP[0].jam,TAHAP[1].jam,TAHAP[2].jam]; let prev=semua.filter(j=>keOf(j)===maxKe), tambah=[];
+    for(let ke=maxKe+1;ke<=mn;ke++){ const r=buatPutaran(sem,ta,ke,mulaiPutaranBerikut(prev,jarak),jam); tambah.push(...r); prev=r; }
+    S.jadwal.push(...tambah); jdKe="semua"; await persist("jadwal");
+    toast(cekAkhirSemester(tambah,sem,ta)?"Ditambahkan, namun sebagian melewati perkiraan akhir semester — sesuaikan tanggal":"Putaran supervisi ditambahkan"); render(); return; }
+  if(act==="jadwal-edit"){ go("jadwal-edit", id||null); return; }
+  if(act==="jadwal-gen"){ go("jadwal-gen"); return; }
+  if(act==="jadwal-simpan"){
+    const d={guruId:$("#jd-guru").value,tahap:$("#jd-tahapf").value,semester:$("#jd-semf").value,tanggal:$("#jd-tgl").value,
+      ke:parseInt($("#jd-ke").value)||1,jam:$("#jd-jam").value.trim(),status:$("#jd-status").value,ket:$("#jd-ket").value.trim(),ta:S.settings.taAktif};
+    if(!d.guruId){ toast("Pilih guru terlebih dahulu"); return; }
+    if(!d.tanggal){ toast("Tanggal belum diisi"); return; }
+    if(id){ Object.assign(S.jadwal.find(x=>x.id===id),d); } else { S.jadwal.push(Object.assign({id:uid("j")},d)); }
+    jdSem=d.semester; await persist("jadwal"); toast("Agenda tersimpan"); go("jadwal"); return;
+  }
+  if(act==="jadwal-hapus"){ if(!confirm("Hapus agenda ini?")) return;
+    S.jadwal=S.jadwal.filter(x=>x.id!==id); await persist("jadwal"); toast("Agenda dihapus"); go("jadwal"); return; }
+  if(act==="jadwal-gen-ok"){
+    const sem=jdSemAktif(), ta=S.settings.taAktif, mulai=$("#gn-mulai").value;
+    if(!mulai){ toast("Tanggal mulai belum diisi"); return; }
+    if(!S.guru.length){ toast("Data guru masih kosong"); return; }
+    const ada=S.jadwal.some(j=>j.semester===sem&&j.ta===ta);
+    if(ada && !confirm("Jadwal "+sem+" TA "+ta+" yang sudah ada akan diganti. Lanjutkan?")) return;
+    S.jadwal=S.jadwal.filter(j=>!(j.semester===sem&&j.ta===ta));
+    const baru=buatJadwalOtomatis(sem,ta,mulai,[$("#gn-jam1").value.trim(),$("#gn-jam2").value.trim(),$("#gn-jam3").value.trim()],$("#gn-jml").value,$("#gn-jarak").value);
+    S.jadwal.push(...baru);
+    jdTahap="semua"; jdKe="semua"; await persist("jadwal");
+    toast(cekAkhirSemester(baru,sem,ta)?"Jadwal disusun, namun sebagian melewati perkiraan akhir semester — sesuaikan tanggal":"Jadwal berhasil disusun"); go("jadwal"); return;
+  }
+  if(act==="cetak-jadwal"){ $("#print-area").innerHTML=jadwalHTML(); setTimeout(()=>window.print(),60); return; }
+
+  if(act==="guru-edit"){ go("guru-edit", id||null); return; }
+  if(act==="guru-simpan"){
+    const d={nama:$("#g-nama").value.trim(),nip:$("#g-nip").value.trim(),tugas:$("#g-tugas").value.trim(),
+      kelas:$("#g-kelas").value.trim(),mapel:$("#g-mapel").value.trim()};
+    if(!d.nama){ toast("Nama guru belum diisi"); return; }
+    if(id){ Object.assign(S.guru.find(x=>x.id===id), d); } else { S.guru.push(Object.assign({id:uid("g")},d)); }
+    await persist("guru"); toast("Data guru tersimpan"); go("guru"); return;
+  }
+  if(act==="guru-hapus"){ if(!confirm("Hapus guru ini dari daftar?")) return;
+    S.guru=S.guru.filter(x=>x.id!==id); await persist("guru"); render(); return; }
+
+  if(act==="saran"){
+    if(!umumOtomatis(draft)){ toast("Isi jawaban pada langkah sebelumnya terlebih dahulu"); return; }
+    const au=draft.autoUmum||{};
+    const ada=["catatanUmum","kekuatan","area","rekomendasi"].some(kk=>draft[kk]&&draft[kk]!==au[kk]);
+    if(ada && !confirm("Isian yang sudah Anda tulis akan diganti. Lanjutkan?")) return;
+    isiUmumOtomatis(true); render(); return; }
+  if(act==="tl-auto"){
+    if(!isiTLOtomatis(false)){ toast("Isi jawaban pada langkah sebelumnya terlebih dahulu"); return; }
+    const au=draft.autoTL||{};
+    const ada=(draft.tl.jenis.length&&draft.tl.jenis.join("|")!==au.jenis)||(draft.tl.rekomendasi&&draft.tl.rekomendasi!==au.rekomendasi)||(draft.tl.target&&draft.tl.target!==au.target);
+    if(ada && !confirm("Isian yang sudah Anda ubah akan diganti. Lanjutkan?")) return;
+    isiTLOtomatis(true); render(); return; }
+  if(act==="cat-auto"){
+    if(!terapkanCatatan(b.dataset.kind,id,true)) toast("Pilih jawaban untuk indikator ini terlebih dahulu");
+    render(); return; }
+  if(act==="cat-auto-semua"){
+    const n=isiCatatanSemua([b.dataset.kind]);
+    toast(n? n+" catatan terisi" : "Belum ada jawaban baru atau catatan sudah terisi");
+    render(); return; }
+
+  if(act==="step-prev"){ step--; render(); return; }
+  if(act==="step-next"){
+    if(step===1){
+      if(!draft.guruId){ toast("Pilih guru terlebih dahulu"); return; }
+    }
+    if(step===5){
+      const i=S.sup.findIndex(o=>o.id===draft.id);
+      draft.diubah=new Date().toISOString();
+      if(i>=0) S.sup[i]=JSON.parse(JSON.stringify(draft)); else S.sup.push(JSON.parse(JSON.stringify(draft)));
+      await persist("sup"); toast("Supervisi tersimpan");
+    }
+    step++; render(); return;
+  }
+  if(act==="obs-baru"){ draft=null; step=1; go("supervisi"); return; }
+  if(act==="obs-edit"){ draft=null; go("supervisi", id); return; }
+  if(act==="obs-hapus"){ if(!confirm("Hapus data supervisi ini?")) return;
+    S.sup=S.sup.filter(o=>o.id!==id); await persist("sup"); go("riwayat"); return; }
+
+  if(act==="cetak"){ const o=S.sup.find(x=>x.id===id); if(!o) return;
+    $("#print-area").innerHTML=laporanHTML(o); setTimeout(()=>window.print(),60); return; }
+  if(act==="cetak-rekap"){ $("#print-area").innerHTML=rekapHTML(); setTimeout(()=>window.print(),60); return; }
+
+  if(act==="pin-cek"){ if($("#pin").value===String(S.settings.pinAdmin)){ adminOK=true; render(); }
+    else toast("PIN belum cocok"); return; }
+
+  if(act==="kat-tambah"){ simpanPengaturan(true); S.instrumen.kategori.push({min:0,label:"Kategori baru",warna:"warn"}); render(); return; }
+  if(act==="kat-hapus"){ simpanPengaturan(true); S.instrumen.kategori.splice(Number(b.dataset.i),1); render(); return; }
+  if(act==="ind-tambah"){ simpanPengaturan(true);
+    S.instrumen[b.dataset.k].push({id:uid("i"),teks:"Indikator baru",aktif:true}); render(); return; }
+  if(act==="ind-hapus"){ simpanPengaturan(true);
+    S.instrumen[b.dataset.k].splice(Number(b.dataset.i),1); render(); return; }
+  if(act==="set-simpan"){ simpanPengaturan(); await persist(); toast("Pengaturan tersimpan"); render(); return; }
+
+  if(act==="backup"){
+    const data=JSON.stringify(S,null,2);
+    const nama="cadangan-supervisi-"+S.settings.taAktif.replace("/","-")+".json";
+    let dl=null; try{ dl = window.claude&&claude.use ? await claude.use("downloads") : null; }catch(err){}
+    if(dl){ try{ await dl.save({filename:nama,data}); toast("Cadangan diunduh"); }catch(err){ toast("Unduhan dibatalkan"); } }
+    else {
+      const w=document.createElement("textarea"); w.value=data;
+      const box=document.createElement("div"); box.className="card";
+      box.innerHTML="<b>Salin teks berikut dan simpan sebagai berkas .json</b>";
+      box.appendChild(w); $("#app").appendChild(box); w.select();
+    }
+    return;
+  }
+  if(act==="restore"){
+    const teks=prompt("Tempelkan isi berkas cadangan (JSON):");
+    if(!teks) return;
+    try{ const d=JSON.parse(teks);
+      if(!d.settings||!d.guru) throw new Error("bentuk data tidak dikenali");
+      S.settings=Object.assign({},DEF_SETTINGS,d.settings); S.guru=d.guru; S.instrumen=d.instrumen||S.instrumen; S.sup=d.sup||[]; S.jadwal=d.jadwal||[];
+      await persist(); toast("Data dipulihkan"); render();
+    }catch(err){ alert("Cadangan tidak dapat dibaca: "+err.message); }
+    return;
+  }
+  if(act==="reset"){
+    if(!confirm("Semua data supervisi, guru, dan instrumen akan dikembalikan ke kondisi awal. Lanjutkan?")) return;
+    S.settings=JSON.parse(JSON.stringify(DEF_SETTINGS)); S.guru=JSON.parse(JSON.stringify(DEF_GURU));
+    S.instrumen=JSON.parse(JSON.stringify(DEF_INSTRUMEN)); S.sup=[]; S.jadwal=[];
+    await persist(); adminOK=false; go("beranda"); return;
+  }
+});
+function simpanPengaturan(diam){
+  $$("[data-set]").forEach(el=>{ S.settings[el.dataset.set]=el.value; });
+  $$("[data-set-list]").forEach(el=>{ S.settings[el.dataset.setList]=el.value.split(",").map(x=>x.trim()).filter(Boolean); });
+  $$("[data-kat]").forEach(el=>{ const [i,f]=el.dataset.kat.split("."); if(S.instrumen.kategori[i]) S.instrumen.kategori[i][f]= f==="min"?num(el.value):el.value; });
+  $$("[data-skala]").forEach(el=>{ const [i,f]=el.dataset.skala.split("."); if(S.instrumen.skala[i]) S.instrumen.skala[i][f]= f==="n"?num(el.value):el.value; });
+  $$("[data-ind]").forEach(el=>{ const p=el.dataset.ind.split("."); const k=p[0], i=Number(p[1]); if(S.instrumen[k]&&S.instrumen[k][i]) S.instrumen[k][i].teks=el.value; });
+  $$("[data-ind-aktif]").forEach(el=>{ const p=el.dataset.indAktif.split("."); const k=p[0], i=Number(p[1]); if(S.instrumen[k]&&S.instrumen[k][i]) S.instrumen[k][i].aktif=el.checked; });
+  if(!diam) saveLocal();
+}
+window.addEventListener("beforeprint", ()=>{ if(!$("#print-area").innerHTML && route==="detail"){
+  const o=S.sup.find(x=>x.id===param); if(o) $("#print-area").innerHTML=laporanHTML(o); }});
+
+/* ============================ START ============================ */
+loadLocal();
+render();
+initData();
+</script>
+</body>
+</html>
